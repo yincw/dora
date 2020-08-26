@@ -1,0 +1,24 @@
+{
+  "name": "@yincw/dora",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tsc:es": "tsc --target ES2015 --module ES2015 --rootDir src --outDir dist/es",
+    "tsc:amd": "tsc --target ES5 --module AMD --rootDir src --outDir dist/amd",
+    "tsc:amdAll": "tsc --target ES5 --module AMD --outFile dist/dora.js",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "e2e": "cypress open",
+    "gen": "node ./scripts/generator"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^26.0.10",
+    "jest": "^26.4.0",
+    "ts-jest": "^26.2.0",
+    "typescript": "^3.9.7"
+  }
+}
