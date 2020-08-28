@@ -1,6 +1,14 @@
 node_modules
+# scripts
+# tutorials
+lib
+es
+dist
+# src
+# __tests__
+# docs
 
+_*
+# package-lock.json
 yarn.lock
 yarn-error.log
-
-package-lock.json

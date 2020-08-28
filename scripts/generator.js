@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 
 const dirName = process.argv[2];
 const fileName = process.argv[3];
@@ -17,6 +18,18 @@ const dirArr = [
         'helper'
 ];
 
+const mapFolder = (dirPath, cb) => {
+    fs.readdirSync(dirPath).forEach( (name) => {
+        var filePath = path.join(dirPath, name);
+        var stat = fs.statSync(filePath);
+
+        if (stat.isFile()) {
+            cb(filePath, stat);
+        } else if (stat.isDirectory()) {
+            mapFolder(filePath, cb);
+        }
+    });
+}
 
 ////////////////////
 // 生成
@@ -78,7 +91,7 @@ describe('${dirNameFlag}/${fileName} 函数', () => {
     
         process.chdir(`../../__tests__`);
         fs.writeFileSync(`${fileName}.test.ts`, testTemp);
-        console.log('\033[40;32m' + ` √ __test__/${fileName}.test.ts 测试用例样板创建成功。` + '\033[0m');
+        console.log('\033[40;32m' + ` √ __test__/${fileName}.test.ts 测试用例样板创建成功；` + '\033[0m');
     }
     
     // 检查文件是否存在，若存在则不创建
@@ -94,6 +107,31 @@ describe('${dirNameFlag}/${fileName} 函数', () => {
                 }
             });
         
+            let filePathArrs = [];
+            let exportArrs = [];
+            
+            process.chdir(`../`);
+            mapFolder('src', (filePath, stat) => {
+                let fPath = filePath.slice(4).replace(/\\/g, '/').split('.')[0];
+                let fName = fPath.split('/').slice(-1)[0].split('.')[0];
+                let obj = {
+                    name: fName,
+                    path: './' + fPath
+                };
+
+                if (fPath !== 'index') {
+                    filePathArrs.push(obj);
+                }
+            });
+            filePathArrs.forEach( (item) => {
+                let indexTemp = `export { ${item.name} } from '${item.path}';\n`
+                exportArrs.push(indexTemp);
+            })
+            
+            fs.writeFileSync('src/index.ts', exportArrs.join(''));
+            console.log('\033[40;32m' + ` √ src/index.ts 更新成功。` + '\033[0m');
+
+            
             let include = dirArr.some( (item) => {
                 return dirNameFlag  === item;
             });

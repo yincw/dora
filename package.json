@@ -1,23 +1,42 @@
 {
   "name": "@yincw/dora",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A library of JavaScript tools",
+  "private": true,
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "sideEffects": false,
+  "files": [
+    "lib",
+    "es",
+    "dist"
+  ],
   "scripts": {
-    "tsc:es": "tsc --target ES2015 --module ES2015 --rootDir src --outDir dist/es",
-    "tsc:amd": "tsc --target ES5 --module AMD --rootDir src --outDir dist/amd",
-    "tsc:amdAll": "tsc --target ES5 --module AMD --outFile dist/dora.js",
+    "tsc:es": "tsc --target ES2015 --module ES2015 --rootDir src --outDir es",
+    "tsc:lib": "tsc --target ES5 --module CommonJS --rootDir src --outDir lib",
+    "tsc:dist": "tsc --target ES5 --module UMD --outFile dist/dora.min.js",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "e2e": "cypress open",
+    "clean": "rimraf lib/* && rimraf es/* && rimraf dist/*",
+    "clean:test": "rimraf src/* && rimraf __tests__/*",
     "gen": "node ./scripts/generator"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "TypeScript",
+    "Jest",
+    "tools",
+    "utils"
+  ],
+  "author": "yincw",
+  "license": "MIT",
   "devDependencies": {
     "@types/jest": "^26.0.10",
+    "husky": "^4.2.5",
     "jest": "^26.4.0",
+    "lint-staged": "^10.2.13",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.26.6",
     "ts-jest": "^26.2.0",
     "typescript": "^3.9.7"
   }
