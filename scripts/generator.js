@@ -37,8 +37,8 @@ const mapFolder = (dirPath, cb) => {
 
 if (!dirName || !fileName) {
 
-    console.log('\033[40;31m × dirName 和 fileName 不能为空！\n \033[0m');
-    console.log('\033[40;37m 示例：\n \033[40;32m\n - npm run gen `dirName` `fileName` \033[0m');
+    console.log('\033[88;31m × dirName 和 fileName 不能为空！\n \033[0m');
+    console.log('\033[88;37m 示例：\n \033[88;32m - npm run gen `dirName` `fileName` \n \033[0m');
     process.exit();
     
 } else {
@@ -87,18 +87,28 @@ describe('${dirNameFlag}/${fileName} 函数', () => {
     
         process.chdir(`./src/${dirName}`);  // cd $1
         fs.writeFileSync(`${fileName}.ts`, tsTemp);
-        console.log('\033[40;32m' + ` √ src/${dirName}/${fileName}.ts 函数样板创建成功；` + '\033[0m');
+        console.log('\033[88;32m' + ` √ src/${dirName}/${fileName}.ts 函数样板创建成功；` + '\033[0m');
     
         process.chdir(`../../__tests__`);
         fs.writeFileSync(`${fileName}.test.ts`, testTemp);
-        console.log('\033[40;32m' + ` √ __test__/${fileName}.test.ts 测试用例样板创建成功；` + '\033[0m');
+        console.log('\033[88;32m' + ` √ __test__/${fileName}.test.ts 测试用例样板创建成功；` + '\033[0m');
     }
-    
+            
+    let includeDir = dirArr.some( (item) => {
+        return dirNameFlag  === item;
+    });
+    if (!includeDir) {
+        console.log('\033[88;33m × 样板创建失败！\n \033[0m');
+        console.log('\033[88;37m 示例：\n \033[88;32m - npm run gen `dirName` `fileName` \n \033[0m');
+        console.log('\033[88;37m dirName 必须是以下值中的一个：\n \033[88;32m\n - string \n - date \n - number \n - math \n - object \n - array \n - function \n - rule \n - lang \n - helper \n \033[0m');
+        process.exit();
+    }
+
     // 检查文件是否存在，若存在则不创建
     fs.access(`./src/${dirName}/${fileName}.ts`, (err) => {
         // err： null  存在
         if (!err) {
-            console.log('\033[40;33m * 文件存在，不能重复创建！ \n \033[0m');
+            console.log('\033[88;33m * 文件存在，不能重复创建！\n \033[0m');
             process.exit();
         } else {
             dirArr.forEach( (item) => {
@@ -106,7 +116,8 @@ describe('${dirNameFlag}/${fileName} 函数', () => {
                     gen(item, fileName);
                 }
             });
-        
+
+
             let filePathArrs = [];
             let exportArrs = [];
             
@@ -129,18 +140,9 @@ describe('${dirNameFlag}/${fileName} 函数', () => {
             })
             
             fs.writeFileSync('src/index.ts', exportArrs.join(''));
-            console.log('\033[40;32m' + ` √ src/index.ts 更新成功。` + '\033[0m');
+            console.log('\033[88;32m' + ` √ src/index.ts 更新成功。\n` + '\033[0m');
+            process.exit();
 
-            
-            let include = dirArr.some( (item) => {
-                return dirNameFlag  === item;
-            });
-            if (!include) {
-                console.log('\033[40;33m × 样板创建失败！\n \033[0m');
-                console.log('\033[40;37m 示例：\n \033[40;32m\n - npm run gen `dirName` `fileName` \033[0m');
-                console.log('\033[40;37m \n dirName 必须是以下值中的一个：\n \033[40;32m\n - string \n - date \n - number \n - math \n - object \n - array \n - function \n - rule \n - lang \n - helper \033[0m');
-            }
-            
         }
     });
 

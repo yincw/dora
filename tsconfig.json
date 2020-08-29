@@ -5,6 +5,9 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
+  "include": [
+    "src"
+  ],
   "exclude": [
     "__tests__",
     "node_modules"
