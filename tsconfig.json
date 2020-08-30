@@ -9,7 +9,7 @@
     "src"
   ],
   "exclude": [
-    "__tests__",
+    "tests",
     "node_modules"
   ]
 }

@@ -6,15 +6,15 @@ const fileName = process.argv[3];
 
 
 const dirArr = [
-    'string', 
-        'date', 
-    'number', 
-        'math', 
-    'object', 
-    'array', 
-    'function', 
-    'rule', 
-        'lang', 
+    'string',
+        'date',
+    'number',
+        'math',
+    'object',
+    'array',
+    'function',
+    'rule',
+        'lang',
         'helper'
 ];
 
@@ -40,7 +40,7 @@ if (!dirName || !fileName) {
     console.log('\033[88;31m × dirName 和 fileName 不能为空！\n \033[0m');
     console.log('\033[88;37m 示例：\n \033[88;32m - npm run gen `dirName` `fileName` \n \033[0m');
     process.exit();
-    
+
 } else {
 
     let dirNameFlag = dirName.toLowerCase();
@@ -51,7 +51,7 @@ if (!dirName || !fileName) {
 
     // 方法文件
     const tsTemp = `export const ${fileName}:any = (dataSource:any, options:any) => {
-    if (!dataSource) throw new Error('${fileName} 数据源参数不能为空。'); 
+    if (!dataSource) throw new Error('${fileName} 数据源参数不能为空。');
     // return ;
 };
 
@@ -84,16 +84,16 @@ describe('${dirNameFlag}/${fileName} 函数', () => {
                 fs.mkdirSync(`./src/${dirName}`); // mkdir $1
             }
         }
-    
+
         process.chdir(`./src/${dirName}`);  // cd $1
         fs.writeFileSync(`${fileName}.ts`, tsTemp);
         console.log('\033[88;32m' + ` √ src/${dirName}/${fileName}.ts 函数样板创建成功；` + '\033[0m');
-    
-        process.chdir(`../../__tests__`);
+
+        process.chdir(`../../tests`);
         fs.writeFileSync(`${fileName}.test.ts`, testTemp);
         console.log('\033[88;32m' + ` √ __test__/${fileName}.test.ts 测试用例样板创建成功；` + '\033[0m');
     }
-            
+
     let includeDir = dirArr.some( (item) => {
         return dirNameFlag  === item;
     });
@@ -120,7 +120,7 @@ describe('${dirNameFlag}/${fileName} 函数', () => {
 
             let filePathArrs = [];
             let exportArrs = [];
-            
+
             process.chdir(`../`);
             mapFolder('src', (filePath, stat) => {
                 let fPath = filePath.slice(4).replace(/\\/g, '/').split('.')[0];
@@ -138,7 +138,7 @@ describe('${dirNameFlag}/${fileName} 函数', () => {
                 let indexTemp = `export { ${item.name} } from '${item.path}';\n`
                 exportArrs.push(indexTemp);
             })
-            
+
             fs.writeFileSync('src/index.ts', exportArrs.join(''));
             console.log('\033[88;32m' + ` √ src/index.ts 更新成功。\n` + '\033[0m');
             process.exit();

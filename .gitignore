@@ -5,7 +5,7 @@ lib
 es
 dist
 # src
-# __tests__
+# tests
 # docs
 coverage
 
