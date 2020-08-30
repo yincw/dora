@@ -1,4 +1,4 @@
-- macOS 系统下 generator 日志背景色和间距调整 
+- macOS 系统下 generator 日志背景色和间距调整
   - https://www.jianshu.com/p/76b1752ddcbd
 - Git Hooks 代码提交前执行测试
   - https://github.com/typicode/husky
@@ -6,12 +6,12 @@
   - https://zhuanlan.zhihu.com/p/35913229
 - Git Commit Message 规范
   - https://segmentfault.com/a/1190000021634111
-- Node Modules 
+- Node Modules
   - https://github.com/SunshowerC/blog/issues/8
   - https://segmentfault.com/a/1190000014286439
-  - 
+  -
 - ESLint
-  - https://segmentfault.com/a/1190000021695864
+  - [x] https://segmentfault.com/a/1190000021695864
   - https://editorconfig.org/
   - https://www.jianshu.com/p/d6a69eb08f07
   - https://github.com/prettier/prettier
@@ -19,13 +19,13 @@
 - Jest 断言文档
   - https://jestjs.io/docs/zh-Hans/expect
   - https://github.com/jest-community/jest-extended
-- TypeScript 类型  
+- TypeScript 类型
   - https://www.typescriptlang.org/docs/handbook/basic-types.html
   - https://www.zhihu.com/question/308844713/answer/574423626
 - 文档和持续集成
   - https://segmentfault.com/a/1190000017745050
   - https://github.com/jiaoyanlin/npm-library-demo
-  - 
+  -
   - https://segmentfault.com/a/1190000018610385
   - https://www.zhihu.com/topic/20137710/hot
   - https://segmentfault.com/a/1190000007543162

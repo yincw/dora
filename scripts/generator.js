@@ -50,7 +50,7 @@ if (!dirName || !fileName) {
     ////////////////////
 
     // 方法文件
-    const tsTemp = `export const ${fileName}:any = (dataSource, options) => {
+    const tsTemp = `export const ${fileName}:any = (dataSource:any, options:any) => {
     if (!dataSource) throw new Error('${fileName} 数据源参数不能为空。'); 
     // return ;
 };
