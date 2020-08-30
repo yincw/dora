@@ -23,8 +23,7 @@
     "lint": "eslint 'src/**/*.{ts,js}'",
     "lints": "eslint --ext .js,.ts",
     "clean": "rimraf lib/* && rimraf es/* && rimraf dist/*",
-    "clean:test": "rimraf src/* && rimraf tests/*",
-    "gen": "node ./scripts/generator"
+      "clean:test": "rimraf src/* && rimraf tests/*"
   },
   "husky": {
     "hooks": {
