@@ -26,12 +26,13 @@
     "lints": "eslint --ext .js,.ts",
     "commit": "cz",
     "release": "standard-version",
-    "gen": "node scripts/generator.js"
+    "gen": "node scripts/generator.js --mode=gen",
+    "del": "node scripts/generator.js --mode=del"
   },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -e $GIT_PARAMS"
+      "commit-msg": "commitlint -e HUSKY_GIT_PARAMS"
     }
   },
   "lint-staged": {
