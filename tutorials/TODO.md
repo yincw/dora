@@ -1,10 +1,12 @@
-- macOS 系统下 generator 日志背景色和间距调整
+- [x] macOS 系统下 generator 日志背景色和间距调整
   - https://www.jianshu.com/p/76b1752ddcbd
-- Git Hooks 代码提交前执行测试
+- [] generator 新增删除文件方法
+- [x] Git Hooks 代码提交前执行测试
+  - https://zhuanlan.zhihu.com/p/35913229
   - https://github.com/typicode/husky
   - https://github.com/okonet/lint-staged
-  - https://zhuanlan.zhihu.com/p/35913229
 - Git Commit Message 规范
+  - https://zhuanlan.zhihu.com/p/34223150
   - https://segmentfault.com/a/1190000021634111
 - Node Modules
   - https://github.com/SunshowerC/blog/issues/8
