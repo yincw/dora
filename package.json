@@ -23,7 +23,8 @@
     "lint": "eslint 'src/**/*.{ts,js}'",
     "lints": "eslint --ext .js,.ts",
     "clean": "rimraf lib/* && rimraf es/* && rimraf dist/*",
-     "clean:test": "rimraf src/* && rimraf tests/*"
+    "clean:test": "rimraf src/* && rimraf tests/*",
+    "gen": "node scripts/generator.js"
   },
   "husky": {
     "hooks": {
@@ -31,7 +32,7 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{js,ts,json,less,md}": [
+    "*./src/**/*.{js,ts,json,less,md}": [
       "prettier --write --ignore-unknown",
       "npm run lint"
     ]

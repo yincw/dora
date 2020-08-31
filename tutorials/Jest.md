@@ -2,8 +2,8 @@
 
 beforeEach
 afterEach
-beforeAll 
-afterAll 
+beforeAll
+afterAll
 
 ## 测试套件 describe
 ## 测试块 test
@@ -12,39 +12,9 @@ afterAll
 
 > String
 
+toMatch
+
 > Number
-
-> Object
-
-> Array
-
-> Function
-
-> Error
-
-
-## Mock
-
-## 异步测试
-## 快照测试
-## 覆盖度测试
-## 端对端测试
-
-
-
-
-
-
-真实性
-
-toBeNull
-toBeUndefined 
-toBeDefined 
-toBeTruthy 
-toBeFalsy 
-
-
-数字
 
 toEqual
 toBe
@@ -53,14 +23,29 @@ toBeGreaterThanOrEqual
 toBeLessThan
 toBeLessThanOrEqual
 
-正则
+> Object
 
-toMatch
-
-数组和可迭代
+> Array
 
 toContain
 
-错误
+> Function
+
+> Error
 
 toThrow
+
+> 真实性
+
+toBeNull
+toBeUndefined
+toBeDefined
+toBeTruthy
+toBeFalsy
+
+## Mock
+
+## 异步测试
+## 快照测试
+## 覆盖度测试
+## 端对端测试
