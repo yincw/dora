@@ -23,7 +23,6 @@
     "clean:test": "rimraf src/* && rimraf tests/*",
     "prettier": "prettier --write",
     "lint": "eslint 'src/**/*.{ts,js}'",
-    "lints": "eslint --ext .js,.ts",
     "commit": "cz",
     "release": "standard-version",
     "gen": "node scripts/generator.js --mode=gen",
