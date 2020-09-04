@@ -15,7 +15,7 @@
   "scripts": {
     "build:es": "tsc --target ES2015 --module ES2015 --rootDir src --outDir es",
     "build:lib": "tsc --target ES5 --module CommonJS --rootDir src --outDir lib",
-    "build": "rollup -c && rollup -c rollup.config.min.js",
+    "build": "rollup -c",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "e2e": "cypress open",
@@ -77,6 +77,10 @@
     "tools",
     "utils"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yincw/dora.git"
+  },
   "author": "yincw",
   "license": "MIT"
 }
