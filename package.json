@@ -10,7 +10,10 @@
   "files": [
     "lib",
     "es",
-    "dist"
+    "dist",
+    "LICENSE",
+    "CHANGELOG.md",
+    "README.md"
   ],
   "scripts": {
     "build:es": "tsc --target ES2015 --module ES2015 --rootDir src --outDir es",
@@ -25,12 +28,14 @@
     "lint": "eslint 'src/**/*.{ts,js}'",
     "commit": "cz",
     "release": "standard-version",
+    "api": "api-extractor run",
+    "prepublishOnly": "npm run commit && npm run release",
     "gen": "node scripts/generator.js --mode=gen",
     "del": "node scripts/generator.js --mode=del"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
+      "pre-commit": "lint-staged & jest",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
