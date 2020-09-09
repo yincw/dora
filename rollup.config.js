@@ -4,6 +4,9 @@ import json from '@rollup/plugin-json';
 import pkg from './package.json';
 import { uglify } from 'rollup-plugin-uglify';
 import { minify } from 'uglify-es';
+import commonjs from '@rollup/plugin-commonjs';
+import babel from '@rollup/plugin-babel';
+import { DEFAULT_EXTENSIONS } from '@babel/core';
 
 const banner = `/*!* ${pkg.name.split('/').slice(-1)}.js v${pkg.version} \n * (c) 2019-${new Date().getFullYear()} ${
   pkg.author
@@ -48,5 +51,14 @@ export default {
       file: pkg.browser,
     },
   ],
-  plugins: [typescript(), json(), nodeResolve()],
+  plugins: [
+    commonjs(),
+    nodeResolve(),
+    typescript(),
+    babel({
+      exclude: 'node_modules/**',
+      extensions: [...DEFAULT_EXTENSIONS, '.ts'],
+    }),
+    json(),
+  ],
 };

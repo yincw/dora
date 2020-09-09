@@ -2,10 +2,11 @@
   "compilerOptions": {
     "strict": true,
     "esModuleInterop": true,
-    // "declaration": true,
-    // "outDir": "dist",
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "declaration": true,
+    "baseUrl": ".",
+    "outDir": "./dist",
+    "moduleResolution": "node",
+    "resolveJsonModule": true
   },
   "include": [
     "src"
