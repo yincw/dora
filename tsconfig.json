@@ -3,10 +3,7 @@
     "strict": true,
     "esModuleInterop": true,
     "declaration": true,
-    "baseUrl": ".",
-    "outDir": "./dist",
-    "moduleResolution": "node",
-    "resolveJsonModule": true
+    "removeComments": true
   },
   "include": [
     "src"

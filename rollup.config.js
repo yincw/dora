@@ -1,19 +1,18 @@
 import { nodeResolve } from '@rollup/plugin-node-resolve';
-import typescript from '@rollup/plugin-typescript';
+import typescript from 'rollup-plugin-typescript2';
 import json from '@rollup/plugin-json';
-import pkg from './package.json';
-import { uglify } from 'rollup-plugin-uglify';
-import { minify } from 'uglify-es';
 import commonjs from '@rollup/plugin-commonjs';
 import babel from '@rollup/plugin-babel';
 import { DEFAULT_EXTENSIONS } from '@babel/core';
+import { terser } from 'rollup-plugin-terser';
+import pkg from './package.json';
 
 const banner = `/*!* ${pkg.name.split('/').slice(-1)}.js v${pkg.version} \n * (c) 2019-${new Date().getFullYear()} ${
   pkg.author
 } \n * Released under the MIT License. \n */`;
 
 export default {
-  input: 'src/index.ts',
+  input: './src/index.ts',
   output: [
     {
       format: 'cjs',
@@ -36,29 +35,27 @@ export default {
       name: 'dora',
       banner,
       plugins: [
-        uglify(
-          {
-            compress: {
-              drop_console: true,
-            },
-            output: {
-              comments: /^!/,
-            },
+        terser({
+          compress: {
+            drop_console: true,
           },
-          minify,
-        ),
+          format: {
+            comments: /^!/,
+          },
+        }),
       ],
       file: pkg.browser,
     },
   ],
   plugins: [
-    commonjs(),
-    nodeResolve(),
     typescript(),
     babel({
+      babelHelpers: 'bundled',
       exclude: 'node_modules/**',
       extensions: [...DEFAULT_EXTENSIONS, '.ts'],
     }),
     json(),
+    commonjs(),
+    nodeResolve(),
   ],
 };
