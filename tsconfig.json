@@ -3,6 +3,8 @@
     "strict": true,
     "esModuleInterop": true,
     "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
     "removeComments": true
   },
   "include": [

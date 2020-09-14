@@ -6,7 +6,7 @@
   "main": "lib/index.js",
   "module": "es/index.js",
   "browser": "dist/index.min.js",
-  "typings": "lib/index.d.ts",
+  "typings": "dist/dora.d.ts",
   "sideEffects": false,
   "files": [
     "lib",
@@ -30,6 +30,8 @@
     "commit": "cz",
     "release": "standard-version",
     "api": "api-extractor run",
+    "doc": "api-documenter markdown --input-folder temp --output-folder docs",
+    "doc:release": "npm run build && npm run api && api-documenter markdown --input-folder temp --output-folder docs",
     "prepublishOnly": "npm run commit && npm run release",
     "gen": "node scripts/generator.js --mode=gen",
     "del": "node scripts/generator.js --mode=del"

@@ -8,7 +8,7 @@ dist
 # tests
 # docs
 coverage
-
+temp
 
 # package-lock.json
 npm-debug.log

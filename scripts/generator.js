@@ -25,7 +25,19 @@ if (!dirName || !fileName) {
   ////////////////////
 
   // 方法文件
-  const tsTemp = `export const ${fileName}:any = (dataSource:any, options:any) => {
+  const tsTemp = `/**
+*
+* @remarks ${fileName}
+*
+* @param
+* @returns
+* @example
+*
+* @beta
+* @author yincw
+*/
+
+export const ${fileName}:any = (dataSource:any, options:any) => {
     if (!dataSource) throw new Error('${fileName} 数据源参数不能为空。');
     // return ;
 };
