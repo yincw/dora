@@ -26,15 +26,21 @@ if (!dirName || !fileName) {
 
   // 方法文件
   const tsTemp = `/**
+* summary<placeholder>
 *
-* @remarks ${fileName}
+* @remarks
+* details<placeholder>
 *
-* @param
-* @returns
 * @example
+* explain<placeholder>
+* code<placeholder>
 *
-* @beta
-* @author yincw
+* @param dataSource - DESCRIPTION
+* @param options - DESCRIPTION
+* @returns ANY
+* @defaultValue ANY
+*
+* @internal -> @alpha -> @beta -> @public (single)
 */
 
 export const ${fileName}:any = (dataSource:any, options:any) => {

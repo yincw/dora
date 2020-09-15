@@ -14,7 +14,8 @@
     "publicTrimmedFilePath": "<projectFolder>/dist/<unscopedPackageName>-public.d.ts"
   },
   "docModel": {
-    "enabled": true
+    "enabled": true,
+    "apiJsonFilePath": "<projectFolder>/temp/<unscopedPackageName>.api.json"
   },
   "messages": {
     "compilerMessageReporting": {

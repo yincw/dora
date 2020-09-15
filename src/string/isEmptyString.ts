@@ -1,24 +1,27 @@
 /**
- * 摘要部分
- * @remarks isEmptyString 备注块
- *
- * @param `array` dataSource
- * @param `object` options
- * @returns `boolean`
- * @example
- * ```ts
- *
- * ```
- * @beta
- * @author yincw
- */
+* summary<placeholder>
+*
+* @remarks
+* details<placeholder>
+*
+* @example
+* explain<placeholder>
+* code<placeholder>
+*
+* @param dataSource - DESCRIPTION
+* @param options - DESCRIPTION
+* @returns ANY
+* @defaultValue ANY
+*
+* @internal -> @alpha -> @beta -> @public (single)
+*/
 
-export const isEmptyString: any = (dataSource: any, options: any) => {
-  if (!dataSource) throw new Error('isEmptyString 数据源参数不能为空。');
-  // return ;
+export const isEmptyString:any = (dataSource:any, options:any) => {
+    if (!dataSource) throw new Error('isEmptyString 数据源参数不能为空。');
+    // return ;
 };
 
 /* ******
- * 参考文献
- ****** */
+* 参考文献
+****** */
 // -

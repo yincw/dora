@@ -3,8 +3,8 @@ import typescript from 'rollup-plugin-typescript2';
 import json from '@rollup/plugin-json';
 import commonjs from '@rollup/plugin-commonjs';
 import babel from '@rollup/plugin-babel';
-import { DEFAULT_EXTENSIONS } from '@babel/core';
 import { terser } from 'rollup-plugin-terser';
+import { DEFAULT_EXTENSIONS } from '@babel/core';
 import pkg from './package.json';
 
 const banner = `/*!* ${pkg.name.split('/').slice(-1)}.js v${pkg.version} \n * (c) 2019-${new Date().getFullYear()} ${
@@ -28,7 +28,7 @@ export default {
       format: 'umd', // umd, iife
       name: 'dora',
       banner,
-      file: pkg.browser.split('.')[0] + '.js',
+      file: pkg.browser.split('.')[0] + '.' + pkg.browser.split('.')[1] + '.js',
     },
     {
       format: 'umd', // umd, iife

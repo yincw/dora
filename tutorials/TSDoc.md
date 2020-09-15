@@ -2,26 +2,31 @@
 
 ## The summary section
 
+-
+
 ## The remarks block
 
-- `@remarks`
+- `@remarks`  https://api-extractor.com/pages/tsdoc/tag_remarks/
 
 ## Additional blocks
 
-- `@param`
-- `@returns`
-- `@example`
-- `@defaultValue`
+- `@example` https://api-extractor.com/pages/tsdoc/tag_example/
+- `@param NAME - DESCRIPTION` https://api-extractor.com/pages/tsdoc/tag_param/
+- `@typeParam NAME - DESCRIPTION` https://api-extractor.com/pages/tsdoc/tag_typeparam/
+- `@returns ANY` https://api-extractor.com/pages/tsdoc/tag_returns/
+- `@defaultValue ANY` https://api-extractor.com/pages/tsdoc/tag_defaultvalue/
 
 ## Modifier tags
 
-- `@internal`
+- `@internal` https://api-extractor.com/pages/tsdoc/doc_comment_syntax/#release-tags
 - `@alpha`
 - `@beta`
-- `@public`
+- `@public` https://api-extractor.com/pages/tsdoc/tag_public/
 -
-- `@virtual`
 - `@deprecated`
+- `@eventProperty`
+- `@virtual`
+- `@override`
 
 ## Inline tags
 
