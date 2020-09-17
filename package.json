@@ -27,7 +27,7 @@
     "e2e": "cypress open",
     "prettier": "prettier --write --ignore-unknown",
     "lint": "eslint 'src/**/*.{ts,js}'",
-    "clean": "rimraf dist/* && npm run clean:doc",
+    "clean": "rimraf dist/* && rimraf coverage/* && npm run clean:doc",
     "clean:src": "rimraf src/* && rimraf tests/*",
     "clean:doc": "rimraf docs/* && rimraf temp/*",
     "clean:d": "rimraf dist/string && rimraf dist/date && rimraf dist/number && rimraf dist/math && rimraf dist/object && rimraf dist/array && rimraf dist/function && rimraf dist/rule && rimraf dist/lang && rimraf dist/helper && rimraf dist/index.d.ts && rimraf dist/index.d.ts.map && rimraf dist/tsdoc-metadata.json",

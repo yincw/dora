@@ -17,7 +17,7 @@
  * @param obj - 指定的 JavaScript 对象
  * @returns true || false
  *
- * @alpha
+ * @beta
  */
 
 export const isEmptyObject: any = (obj: object) => {
