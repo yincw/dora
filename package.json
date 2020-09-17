@@ -22,7 +22,7 @@
     "commit": "cz",
     "release": "standard-version",
     "prepublishOnly": "npm run docs:build && npm run commit && npm run release",
-    "test": "jest --verbose -u",
+    "test": "jest --verbose",
     "test:coverage": "jest --coverage",
     "e2e": "cypress open",
     "prettier": "prettier --write --ignore-unknown",

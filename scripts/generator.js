@@ -43,8 +43,8 @@ if (!dirName || !fileName) {
  * @internal -> @alpha -> @beta -> @public (single)
  */
 
-export const isEmptyObject: any = (dataSource: any, options: any) => {
-  if (!dataSource) throw new Error('isEmptyObject 参数不能为空。');
+export const ${fileName}: any = (dataSource: any, options: any) => {
+  if (!dataSource) throw new Error('dataSource 参数不能为空。');
   // return ;
 };
 
@@ -58,11 +58,11 @@ export const isEmptyObject: any = (dataSource: any, options: any) => {
   const testTemp = `import { ${fileName} } from '../src/${dirNameFlag}/${fileName}';
 
 // 测试套件
-describe('object/isEmptyObject 函数', () => {
+describe('${dirNameFlag}/${fileName} 函数', () => {
   // 测试块
-  test('数据源参数必填', () => {
+  test('数据源参数不能为空', () => {
     // 预期
-    // expect(isEmptyObject()).toThrow();
+    expect(() => {${fileName}()}).toThrow();
   });
 });
 `;
