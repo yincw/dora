@@ -1,6 +1,6 @@
 {
   "name": "@yincw/dora",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A library of JavaScript tools",
   "main": "dist/dora.cjs.js",
   "module": "dist/dora.es.js",

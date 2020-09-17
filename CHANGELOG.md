@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.6](https://github.com/yincw/dora/compare/v0.0.5...v0.0.6) (2020-09-17)
+
+
+### Features
+
+* add new function ([ff08aba](https://github.com/yincw/dora/commit/ff08aba831d3fa3147771ec5f27d529cbebb79ba))
+* add new function ([c73cf5e](https://github.com/yincw/dora/commit/c73cf5e0d4bfc9677feadee70b934a52d3fcdf30))
+
 ### [0.0.4](https://github.com/yincw/dora/compare/v0.0.5...v0.0.4) (2020-09-17)
 
 
