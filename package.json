@@ -21,7 +21,7 @@
     "docs:build": "npm run build && npm run api && npm run docs && npm run clean:d",
     "commit": "cz",
     "release": "standard-version",
-    "prepublishOnly": "npm run docs:build && npm run commit && npm run release",
+    "prepublishOnly": "npm run clean && npm run docs:build && git add . && npm run commit && npm run release",
     "test": "jest --verbose",
     "test:coverage": "jest --coverage",
     "e2e": "cypress open",
