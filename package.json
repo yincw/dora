@@ -1,11 +1,11 @@
 {
   "name": "@yincw/dora",
-  "version": "0.0.3",
+  "version": "0.0.1",
   "description": "A library of JavaScript tools",
   "private": true,
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.es.js",
-  "browser": "dist/index.umd.min.js",
+  "main": "dist/dora.cjs.js",
+  "module": "dist/dora.es.js",
+  "browser": "dist/dora.umd.min.js",
   "typings": "dist/dora.d.ts",
   "sideEffects": false,
   "files": [
@@ -21,7 +21,7 @@
     "docs:build": "npm run build && npm run api && npm run docs && npm run clean:d",
     "commit": "cz",
     "release": "standard-version",
-    "prepublishOnly": "npm run docs:build && npm run commit && npm run release && npm run clean:d",
+    "prepublishOnly": "npm run docs:build && npm run commit && npm run release",
     "test": "jest --verbose -u",
     "test:coverage": "jest --coverage",
     "e2e": "cypress open",
@@ -30,7 +30,7 @@
     "clean": "rimraf dist/* && npm run clean:doc",
     "clean:src": "rimraf src/* && rimraf tests/*",
     "clean:doc": "rimraf docs/* && rimraf temp/*",
-    "clean:d": "rimraf dist/string && rimraf dist/date && rimraf dist/number && rimraf dist/math && rimraf dist/object && rimraf dist/array && rimraf dist/function && rimraf dist/rule && rimraf dist/lang && rimraf dist/helper",
+    "clean:d": "rimraf dist/string && rimraf dist/date && rimraf dist/number && rimraf dist/math && rimraf dist/object && rimraf dist/array && rimraf dist/function && rimraf dist/rule && rimraf dist/lang && rimraf dist/helper && rimraf dist/index.d.ts && rimraf dist/index.d.ts.map && rimraf dist/tsdoc-metadata.json",
     "gen": "node scripts/generator.js --mode=gen",
     "del": "node scripts/generator.js --mode=del"
   },
@@ -81,6 +81,9 @@
     "standard-version": "^9.0.0",
     "ts-jest": "^26.2.0",
     "typescript": "^3.9.7"
+  },
+  "dependencies": {
+    "core-js": "^3.6.5"
   },
   "keywords": [
     "Dora",

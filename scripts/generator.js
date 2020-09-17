@@ -26,31 +26,31 @@ if (!dirName || !fileName) {
 
   // 方法文件
   const tsTemp = `/**
-* summary<placeholder>
-*
-* @remarks
-* details<placeholder>
-*
-* @example
-* explain<placeholder>
-* code<placeholder>
-*
-* @param dataSource - DESCRIPTION
-* @param options - DESCRIPTION
-* @returns ANY
-* @defaultValue ANY
-*
-* @internal -> @alpha -> @beta -> @public (single)
-*/
+ * summary<placeholder>
+ *
+ * @remarks
+ * details<placeholder>
+ *
+ * @example
+ * explain<placeholder>
+ * code<placeholder>
+ *
+ * @param dataSource - DESCRIPTION
+ * @param options - DESCRIPTION
+ * @returns ANY
+ * @defaultValue ANY
+ *
+ * @internal -> @alpha -> @beta -> @public (single)
+ */
 
-export const ${fileName}:any = (dataSource:any, options:any) => {
-    if (!dataSource) throw new Error('${fileName} 数据源参数不能为空。');
-    // return ;
+export const isEmptyObject: any = (dataSource: any, options: any) => {
+  if (!dataSource) throw new Error('isEmptyObject 参数不能为空。');
+  // return ;
 };
 
 /* ******
-* 参考文献
-****** */
+  * 参考文献
+  ****** */
 // -
 `;
 
@@ -58,13 +58,12 @@ export const ${fileName}:any = (dataSource:any, options:any) => {
   const testTemp = `import { ${fileName} } from '../src/${dirNameFlag}/${fileName}';
 
 // 测试套件
-describe('${dirNameFlag}/${fileName} 函数', () => {
-    // 测试块
-    test('数据源参数必填', () => {
-        // 预期
-        // expect(${fileName}()).toThrow();
-    });
-
+describe('object/isEmptyObject 函数', () => {
+  // 测试块
+  test('数据源参数必填', () => {
+    // 预期
+    // expect(isEmptyObject()).toThrow();
+  });
 });
 `;
 
