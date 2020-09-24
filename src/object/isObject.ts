@@ -7,11 +7,11 @@
  * @example
  * 传入值为对象，返回 true。
  * ```
- * isObject({}) -> true
+ * isObject({}) // => true
  * ```
  * 传入值为非对象，返回 false。
  * ```
- * isObject('') -> false
+ * isObject('') // => false
  * ```
  *
  * @param obj - 指定的 JavaScript 对象

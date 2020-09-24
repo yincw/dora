@@ -6,8 +6,8 @@
  *
  * @example
  * ```js
- * hasSubString('foo', 'oo'); // true
- * hasSubString('foo', 'ee'); // false
+ * hasSubString('foo', 'oo');  // => true
+ * hasSubString('foo', 'ee'); // => false
  * ```
  *
  * @param str - 指定的字符串
@@ -18,7 +18,7 @@
  */
 
 export const hasSubString: any = (str: string, subString: string) => {
-  if (!str) throw new Error('str 参数不能为空。');
+  if (!str) throw new Error('hasSubString str 参数不能为空。');
   return str.indexOf(subString) !== -1;
 };
 

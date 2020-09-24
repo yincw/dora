@@ -7,11 +7,11 @@
  * @example
  * 如果传入空对象（`{}`），则返回 true。
  * ```js
- * isEmptyObject({})  -> true
+ * isEmptyObject({})  // => true
  * ```
  * 如果传入非空对象，则返回 false。
  * ```js
- * isEmptyObject({a: 'a'})  -> false
+ * isEmptyObject({a: 'a'})  // => false
  * ```
  *
  * @param obj - 指定的 JavaScript 对象
@@ -21,7 +21,7 @@
  */
 
 export const isEmptyObject: any = (obj: object) => {
-  if (!obj) throw new Error('isEmptyObject 参数不能为空。');
+  if (!obj) throw new Error('isEmptyObject obj 参数不能为空。');
   for (var key in obj) {
     return false;
   }

@@ -9,6 +9,7 @@ describe('object/isObject 函数', () => {
     expect(isObject(obj)).toBe(true);
     expect(isObject(new Object())).toBe(true);
   });
+
   test('为 false 测试', () => {
     // 预期
     const str: string = '';

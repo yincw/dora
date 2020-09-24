@@ -9,11 +9,13 @@ describe('object/isEmptyObject 函数', () => {
       isEmptyObject();
     }).toThrow();
   });
+
   test('为 true 测试', () => {
     // 预期
     const obj: object = {};
     expect(isEmptyObject(obj)).toBe(true);
   });
+
   test('为 false 测试', () => {
     // 预期
     const obj: object = {

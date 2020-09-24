@@ -7,12 +7,12 @@
  * @example
  * 给定字符串是否为空，支持下列形式：
  * ```js
- * isEmptyString(''); // true
- * isEmptyString(' ');  // 空格 true
- * isEmptyString('\t');  // 制表符 true
- * isEmptyString('\n');  // 换行符 true
- * isEmptyString('\r');  // 回车符 true
- * isEmptyString('str');  // false
+ * isEmptyString(''); // => true
+ * isEmptyString(' ');  // 空格 => true
+ * isEmptyString('\t');  // 制表符 => true
+ * isEmptyString('\n');  // 换行符 => true
+ * isEmptyString('\r');  // 回车符 => true
+ * isEmptyString('str');  // => false
  * ```
  *
  * @param str - 指定的字符串
