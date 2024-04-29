@@ -1,7 +1,7 @@
-import { isObject } from '../src/object/isObject';
+import { isObject } from '../../src/TypeUtil/isObject';
 
 // 测试套件
-describe('object/isObject 函数', () => {
+describe('TypeUtil/isObject 函数', () => {
   // 测试块
   test('为 true 测试', () => {
     // 预期
