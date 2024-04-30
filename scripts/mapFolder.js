@@ -26,26 +26,23 @@ const map = (dirPath, mode = 'directory') => {
       arrs.push(obj);
     } else if (mode === 'both') {
       arrs.push(obj);
-      // if (stat.isFile()) {
-      //   arrs.push(obj);
-      // } else if (stat.isDirectory()) {
-      //   arrs.push(obj);
-      // }
     }
   });
 
   return arrs;
 };
 
-// const mapDir = (dirPath, cb) => {
-//   fs.readdirSync(dirPath).forEach((name) => {
-//     var filePath = path.join(dirPath, name);
+// 递归文件夹
+// const mapDir = (dir, cb) => {
+//   fs.readdirSync(dir).forEach((name) => {
+//     var filePath = path.join(dir, name);
 //     var stat = fs.statSync(filePath);
 
 //     if (stat.isFile()) {
-//       cb(filePath, stat);
+//       cb(filePath, stat.isFile());
 //     } else if (stat.isDirectory()) {
 //       mapDir(filePath, cb);
+//       cb(filePath, stat.isFile());
 //     }
 //   });
 // };
@@ -53,6 +50,25 @@ const map = (dirPath, mode = 'directory') => {
 exports.mapFolder = function () {
   let dirItemNames = []; // 目录名称组成的数组
   let indexTemps = []; // index.ts 模板
+
+  // 递归 src
+  // let pathArrs = [];
+  // mapDir('src', (paths, isFile) => {
+  //   let fPath = paths.slice(4).replace(/\\/g, '/').split('.')[0];
+  //   let fName = fPath.split('/').slice(-1)[0].split('.')[0];
+
+  //   var obj = {
+  //     name: fName, // 文件名，函数名
+  //     path: './' + fPath, // 文件引用路径，相对 src 目录
+  //     isFile: isFile,
+  //   };
+
+  //   非 index 文件
+  //   if (fName !== 'index') {
+  //     pathArrs.push(obj);
+  //   }
+  // });
+  // console.log('pathArrs', pathArrs);
 
   // 以 directory 模式迭代 src 子目录
   const dirArrs = map('src');
@@ -66,30 +82,42 @@ exports.mapFolder = function () {
     // 以 file 模式迭代 src 子目录 里的文件
     const fileArrs = map('src/' + dirItem.name, 'file');
 
-    // src/*Util.ts
+    // src/*Util/index.ts
     let fileItemNames = []; // 目录名称组成的数组
     let fileTemps = []; // *Util.ts 模板
     let exportFileTemps = []; // *Util.ts 模板 export {}
     fileArrs.forEach((fileItem) => {
-      fileItemNames.push(fileItem.name);
+      if (fileItem.name !== 'index') {
+        fileItemNames.push(fileItem.name);
 
-      // 以对象方式导出
-      // import { tree2 } from './ObjectUtil/tree2';
-      const fileTemp = `import { ${fileItem.name} } from '${fileItem.path}';\n`;
-      fileTemps.push(fileTemp);
-      // 以方法方式导出
-      // export { tree2 } from './ObjectUtil/tree2';
-      const exportFileTemp = `export { ${fileItem.name} } from '${fileItem.path}';\n`;
-      exportFileTemps.push(exportFileTemp);
+        // 1. 以对象方式导出
+        // import { tree2 } from './ObjectUtil/tree2';
+        // const fileTemp = `import { ${fileItem.name} } from '${fileItem.path}';\n`;
+
+        // import { tree2 } from './tree2';
+        const fileTemp = `import { ${fileItem.name} } from './${fileItem.name}';\n`;
+        fileTemps.push(fileTemp);
+
+        // 以方法方式导出
+        // export { tree2 } from './ObjectUtil/tree2';
+        // const exportFileTemp = `export { ${fileItem.name} } from '${fileItem.path}';\n`;
+
+        // src/*Util/index.ts
+        // export { tree2 } from './tree2';
+        const exportFileTemp = `export { ${fileItem.name} } from './${fileItem.name}';\n`;
+        exportFileTemps.push(exportFileTemp);
+      }
     });
+    // 2. 以对象方式导出
+    // export default { tree2 };
+    exportFileTemps.push(`export default {\n\n${fileItemNames.join(',\n')}\n};`);
+    fs.writeFileSync(`src/${dirItem.name}/index.ts`, fileTemps.join('') + '\n' + exportFileTemps.join('')); // 以对象 + 方法方式导出
+    console.log('\033[88;32m' + ` √ src/${dirItem.name}/index.ts 更新成功。\n` + '\033[0m');
 
-    // if (fileTemps.length > 0) {
-    fileTemps.push(`export default {\n${fileItemNames.join(',\n')}\n};`);
-    // }
+    // 在外层以对象形式导出
+    // fileTemps.push(`export default {\n${fileItemNames.join(',\n')}\n};`);
     // fs.writeFileSync(`src/${dirItem.name}.ts`, fileTemps.join('')); // 以对象方式导出
-    // fs.writeFileSync(`src/${dirItem.name}.ts`, exportFileTemps.join('')); // 以方法方式导出
-    fs.writeFileSync(`src/${dirItem.name}.ts`, fileTemps.join('') + '\n\n' + exportFileTemps.join('')); // 以对象 + 方法方式导出
-    console.log('\033[88;32m' + ` √ src/${dirItem.name}.ts 更新成功。\n` + '\033[0m');
+    // console.log('\033[88;32m' + ` √ src/${dirItem.name}.ts 更新成功。\n` + '\033[0m');
   });
 
   if (indexTemps.length > 0) {

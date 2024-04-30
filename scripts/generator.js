@@ -9,7 +9,6 @@ const fileName = process.argv[4];
 
 const dirNameUtil = capitalized(dirName) + 'Util';
 
-// const dirArr = ['string', 'date', 'number', 'math', 'object', 'array', 'function', 'rule', 'lang', 'helper'];
 const dirArr = [
   // 数据结构
   'type',
@@ -155,10 +154,10 @@ describe('${dirNameUtil}/${fileName} 函数', () => {
     if (!err) {
       if (modeFlag === 'del') {
         fs.unlinkSync(`./src/${dirNameUtil}/${fileName}.ts`);
-        fs.unlinkSync(`./src/${dirNameUtil}.ts`);
+        // fs.unlinkSync(`./src/${dirNameUtil}.ts`);
         fs.unlinkSync(`./tests/${dirNameUtil}/${fileName}.test.ts`);
         console.log('\033[88;32m' + ` √ src/${dirNameUtil}/${fileName}.ts 删除成功；` + '\033[0m');
-        console.log('\033[88;32m' + ` √ src/${dirNameUtil}.ts 删除成功；` + '\033[0m');
+        // console.log('\033[88;32m' + ` √ src/${dirNameUtil}.ts 删除成功；` + '\033[0m');
         console.log('\033[88;32m' + ` √ src/index.ts 删除成功；` + '\033[0m');
         console.log('\033[88;32m' + ` √ tests/${dirNameUtil}/${fileName}.test.ts 删除成功；` + '\033[0m');
         process.chdir(`./`);
