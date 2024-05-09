@@ -94,10 +94,6 @@ export const ${fileName}: any = (dataSource: any, options: any) => {
   // return ;
 };
 
-/* ******
-  * 参考文献
-  ****** */
-// -
 `;
 
   // 测试文件

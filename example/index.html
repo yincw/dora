@@ -4,10 +4,113 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>@yincw/dora</title>
-  <script src="./lib/require.js" data-main="../dist/dora.umd.js"></script>
-  <!-- <script src="../dist/dora.umd.js"></script> -->
+  <!-- AMD，CMD -->
+  <!-- <script src="./lib/require.js" data-main="./amd.js"></script> -->
 </head>
 <body>
+  <!-- script，iife，UMD -->
+  <!-- <script src="../dist/dora.umd.js"></script>
+  <script>
+    console.log('dora',dora);
+  </script> -->
+
+  <script>
+    // import {isNull} from '../es/TypeUtil/isNull.js';
+    // console.log('isNull', isNull([]));
+
+
+    // 函数式编程
+    // ============
+    // 'use strict';
+
+    var func = function () {
+      // 'use strict';
+      console.log(this); // => window；严格模式下，undefined
+      console.log(this === window); // => true
+    };
+    // 作为函数调用
+    // func();
+
+    // console.log('IIFE');
+    //~, !, -, +, (),
+    // +function () {
+    //   console.log(this); // => window；严格模式下，undefined
+    //   console.log(this === window); // => true
+    // }();
+    // (
+    //   function () {
+    //     console.log(this); // => window；严格模式下，undefined
+    //     console.log(this === window); // => true
+    //   }()
+    // );
+    // (
+    //   function () {
+    //     console.log(this); // => window；严格模式下，undefined
+    //     console.log(this === window); // => true
+    //   }
+    // )();
+
+    var fun = () => {
+      console.log(this); // => window；严格模式下，undefined
+      console.log(this === window); // => true
+    };
+    // fun();
+
+    function ConstructorFunc (value) {
+      this.fun = value;
+      console.log(this);
+    }
+    // var obj1 = new ConstructorFunc(20); // => ConstructorFunc
+
+    // 面向对象编程
+    // ============
+    var obj = {
+      name: [1, 2],
+      val: 10,
+      func: function () {
+        console.log(this); // => obj
+        console.log(this === obj); // => true
+      },
+      cha: {
+        name: [4, 5],
+        val: 11,
+        func: function () {
+          console.log(this.val); // => obj.cha
+          console.log(this === obj.cha); // => true
+          return this.name.map( i => `${i} + ${this.val}`);
+        }
+      },
+      point: {
+        val: 12,
+        func: () => {
+          console.log(this); // => window
+          console.log(this === window); // => true
+        }
+      },
+    };
+    // 作为方法调用
+    // obj.func();
+    // obj.cha.func();
+    // console.log(obj.cha.func());
+    // obj.point.func();
+    // var obj1 = obj.func;
+    // obj1();  // => window
+    obj.cha.func.call(obj); // => true
+    obj.cha.func.apply(obj); // => true
+
+    // class Test {
+    //   constructor() {
+    //     console.log(this);  // => Test
+    //   }
+
+    //   func() {
+    //     console.log(this);  // => Test
+    //     console.log(this === obj.point); // => true
+    //   }
+    // };
+    // var test = new Test();
+    // console.log(test.func());
+  </script>
 
 </body>
 </html>

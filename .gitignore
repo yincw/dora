@@ -1,16 +1,26 @@
-node_modules
-# scripts
-# tutorials
+# 输出
 dist
-# src
-# tests
-# docs
-coverage
-temp
+lib
+es
+system
 
-# package-lock.json
+# 中间转换
+temp
+coverage
+
+# 输入
+# src ## 源码
+# tests  ## 测试用例
+# docs  ## API .md
+# example  ## 示例 .html
+# scripts
+tutorials
+
+# 构建
+node_modules
 npm-debug.log
-# yarn.lock
 yarn-error.log
+# package-lock.json
+# yarn.lock
 
 _*

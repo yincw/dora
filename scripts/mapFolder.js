@@ -76,7 +76,7 @@ exports.mapFolder = function () {
     dirItemNames.push(dirItem.name);
 
     // src/index.ts
-    const indexTemp = `import ${dirItem.name} from '${dirItem.path}';\n`;
+    const indexTemp = `import ${dirItem.name} from '${dirItem.path}/index';\n`;
     indexTemps.push(indexTemp);
 
     // 以 file 模式迭代 src 子目录 里的文件
@@ -110,7 +110,7 @@ exports.mapFolder = function () {
     });
     // 2. 以对象方式导出
     // export default { tree2 };
-    exportFileTemps.push(`export default {\n\n${fileItemNames.join(',\n')}\n};`);
+    exportFileTemps.push(`\nexport default {\n${fileItemNames.join(',\n')}\n};`);
     fs.writeFileSync(`src/${dirItem.name}/index.ts`, fileTemps.join('') + '\n' + exportFileTemps.join('')); // 以对象 + 方法方式导出
     console.log('\033[88;32m' + ` √ src/${dirItem.name}/index.ts 更新成功。\n` + '\033[0m');
 
@@ -121,7 +121,7 @@ exports.mapFolder = function () {
   });
 
   if (indexTemps.length > 0) {
-    indexTemps.push(`export default {\n${dirItemNames.join(',\n')}\n};`);
+    indexTemps.push(`\nexport default {\n${dirItemNames.join(',\n')}\n};`);
   }
   fs.writeFileSync('src/index.ts', indexTemps.join(''));
   console.log('\033[88;32m' + ` √ src/index.ts 更新成功。\n` + '\033[0m');

@@ -23,8 +23,3 @@
 export const isObject: any = (obj: object) => {
   return Object.prototype.toString.call(obj).slice(8, -1) === 'Object';
 };
-
-/* ******
- * 参考文献
- ****** */
-// -
