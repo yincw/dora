@@ -1,23 +1,28 @@
 /**
- * summary<placeholder>
+ * 检测给定值是否为 Null 类型
  *
  * @remarks
- * details<placeholder>
+ * 检测给定值是否为 Null 类型；如果是，返回 true，否则返回 false。
  *
  * @example
- * explain<placeholder>
- * code<placeholder>
+ * 传入值为 Null ，返回 true。
+ * ```
+ * TypeUtil.isNull(null) // => true
+ * ```
+ * 传入值为非 Null ，返回 false。
+ * ```
+ * TypeUtil.isNull('') // => false
+ * ```
  *
- * @param dataSource - DESCRIPTION
- * @param options - DESCRIPTION
- * @returns ANY
- * @defaultValue ANY
+ * @param value - 指定的给定值
+ * @returns Boolean
+ * @defaultValue Boolean
  *
- * @internal -> @alpha -> @beta -> @public (single)
+ * @public
  */
 
-export const isNull: any = (dataSource: any, options: any) => {
-  if (!dataSource) throw new Error('dataSource 参数不能为空。');
-  // return ;
+export const isNull: any = (value: any = null) => {
+  return Object.prototype.toString.call(value).slice(8, -1) === 'Null';
 };
 
+// value === null

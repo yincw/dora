@@ -84,8 +84,8 @@ export default {
       module: 'ES2015',
     }),
     babel({
-      // babelHelpers: 'bundled',
-      babelHelpers: 'runtime',
+      babelHelpers: 'bundled',
+      // babelHelpers: 'runtime',
       exclude: 'node_modules/**',
       extensions: [...DEFAULT_EXTENSIONS, '.ts'],
     }),

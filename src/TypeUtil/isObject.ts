@@ -1,25 +1,26 @@
 /**
- * 检测给定值是否为对象
+ * 检测给定值是否为 Object（对象）类型
  *
  * @remarks
- * 检测给定值是否为对象；如果是，返回 true，否则返回 false。
+ * 检测给定值是否为 Object（对象）类型；如果是，返回 true，否则返回 false。
  *
  * @example
  * 传入值为对象，返回 true。
  * ```
- * isObject({}) // => true
+ * TypeUtil.isObject({}) // => true
  * ```
  * 传入值为非对象，返回 false。
  * ```
- * isObject('') // => false
+ * TypeUtil.isObject('') // => false
  * ```
  *
- * @param obj - 指定的 JavaScript 对象
- * @returns true || false
+ * @param value - 指定的给定值
+ * @returns Boolean
+ * @defaultValue Boolean
  *
- * @beta
+ * @public
  */
 
-export const isObject: any = (obj: object) => {
-  return Object.prototype.toString.call(obj).slice(8, -1) === 'Object';
+export const isObject: any = (value: any = {}) => {
+  return Object.prototype.toString.call(value).slice(8, -1) === 'Object';
 };

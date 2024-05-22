@@ -9,10 +9,35 @@
 </head>
 <body>
   <!-- script，iife，UMD -->
-  <!-- <script src="../dist/dora.umd.js"></script>
+  <script src="../dist/dora.umd.js"></script>
   <script>
     console.log('dora',dora);
-  </script> -->
+    const getUsers = dora.FunctionUtil.createOverload({
+      useFirst: true,
+    });
+
+    getUsers.addImpl(function () {
+      console.log('查询所有用户');
+    });
+    getUsers.addImpl(function () {
+      console.log('xxxx查询所有用户');
+    });
+    const searchPage = function (page, pageSize = 10) {
+      console.log('按照【页码】和【数量】查询用户');
+    }
+    getUsers.addImpl('number', searchPage);
+    getUsers.addImpl('number', 'number', searchPage);
+
+    getUsers.addImpl('string', function () {
+      console.log('按照【姓名】查询用户');
+    });
+
+    getUsers.addImpl('string', 'string', function () {
+      console.log('按照【性别】查询用户');
+    });
+
+    // getUsers();
+  </script>
 
   <script>
     // import {isNull} from '../es/TypeUtil/isNull.js';
@@ -95,8 +120,8 @@
     // obj.point.func();
     // var obj1 = obj.func;
     // obj1();  // => window
-    obj.cha.func.call(obj); // => true
-    obj.cha.func.apply(obj); // => true
+    // obj.cha.func.call(obj); // => true
+    // obj.cha.func.apply(obj); // => true
 
     // class Test {
     //   constructor() {
@@ -110,6 +135,64 @@
     // };
     // var test = new Test();
     // console.log(test.func());
+
+    // var jsonObj = Math;
+    //   console.log(jsonObj);
+
+    //   console.log(typeof jsonObj);
+    //   console.log(jsonObj instanceof Object);
+    //   console.log(jsonObj instanceof Array);
+    //   console.log(jsonObj.constructor);
+    //   console.log(jsonObj.__proto__ == Object.prototype);
+    //   console.log(jsonObj.__proto__ == Array.prototype);
+    //   console.log(Object.getPrototypeOf(jsonObj) == Object.prototype);
+    //   console.log( Object.prototype.isPrototypeOf(jsonObj));
+    //   console.log( Array.prototype.isPrototypeOf(jsonObj));
+    //   console.log(Object.prototype.toString.call(jsonObj));
+
+    var obj = {};
+    var arr = [];
+    var str = '';
+    var bool = false;
+    var num = 0;
+    var nul = null;
+    var und;
+
+    // var proxy = new Proxy();
+    // var reflect = new Reflect();
+    var set = new Set();
+    var map = new Map();
+    var wset = new WeakSet();
+    var wmap = new WeakMap();
+    var reg = new RegExp();
+    // var int = new BigInt();
+    var math = Math;
+    var date = new Date();
+    var fun = new Function();
+    var json = JSON;
+    var json1 = JSON.parse('{"a": 1, "b": 2, "c": 3}');
+    var err = new Error();
+
+    console.log('obj', obj);
+    console.log('arr', arr);
+    console.log('str', str);
+    console.log('bool', bool);
+    console.log('num', num);
+    console.log('nul', nul);
+    console.log('und', und);
+
+    console.log('set', set);
+    console.log('map', map);
+    console.log('wset', wset);
+    console.log('wmap', wmap);
+    console.log('reg', reg);
+    console.log('math', math);
+    console.log('date', date);
+    console.log('fun', fun);
+    console.log('json', json);
+    console.log('json1', dora.TypeUtil.isJSON(json1));
+    console.log('err', err);
+
   </script>
 
 </body>

@@ -3,8 +3,15 @@ import { isString } from '../../src/TypeUtil/isString';
 // 测试套件
 describe('TypeUtil/isString 函数', () => {
   // 测试块
-  test('数据源参数不能为空', () => {
+  test('为 true 测试', () => {
     // 预期
-    expect(() => {isString()}).toThrow();
+    const text: string = '';
+    expect(isString(text)).toBe(true);
+  });
+  // 测试块
+  test('为 false 测试', () => {
+    // 预期
+    const text: boolean = true;
+    expect(isString(text)).toBe(false);
   });
 });

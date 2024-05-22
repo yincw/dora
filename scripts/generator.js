@@ -10,6 +10,7 @@ const fileName = process.argv[4];
 const dirNameUtil = capitalized(dirName) + 'Util';
 
 const dirArr = [
+  'global',
   // 数据结构
   'type',
   'object',
@@ -17,8 +18,8 @@ const dirArr = [
   'boolean',
   'number',
   'string',
-  'money',
   'url',
+  'money',
   'json',
 
   // 内置功能
@@ -27,7 +28,7 @@ const dirArr = [
   'timer',
   'regexp',
   'function',
-  'html',
+  'code',
 
   // 平台功能
   'platform',
@@ -40,9 +41,9 @@ const dirArr = [
   'log',
 
   // 组件功能
-  'image',
   'table',
   'calendar',
+  'image',
   'graph',
 ];
 
