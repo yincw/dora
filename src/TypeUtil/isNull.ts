@@ -21,7 +21,7 @@
  * @public
  */
 
-export const isNull: any = (value: any = null) => {
+export const isNull: any = (value: any) => {
   return Object.prototype.toString.call(value).slice(8, -1) === 'Null';
 };
 

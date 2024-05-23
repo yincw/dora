@@ -25,7 +25,7 @@
 
 import { isNotEmpty } from './isNotEmpty';
 
-export const isEmpty: any = (value: any = '') => {
+export const isEmpty: any = (value: any) => {
   if (!isNotEmpty(value)) {
     return true;
   }

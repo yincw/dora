@@ -29,6 +29,6 @@
  * @public
  */
 
-export const is: any = (value: any = '') => {
+export const is: any = (value: any) => {
   return Object.prototype.toString.call(value).slice(8, -1);
 };

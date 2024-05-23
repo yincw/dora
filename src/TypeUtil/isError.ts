@@ -21,7 +21,7 @@
  * @public
  */
 
-export const isError: any = (value: any = new Error()) => {
+export const isError: any = (value: any) => {
   return Object.prototype.toString.call(value).slice(8, -1) === 'Error';
 };
 

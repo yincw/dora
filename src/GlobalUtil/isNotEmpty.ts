@@ -25,7 +25,7 @@
 
 import { isObject } from '../TypeUtil/isObject';
 
-export const isNotEmpty: any = (value: any = '') => {
+export const isNotEmpty: any = (value: any) => {
   if (
     // 非 undefined & null
     (typeof value !== 'undefined' && value !== null) ||

@@ -21,7 +21,7 @@
  * @public
  */
 
-export const isFunction: any = (value: any = () => {}) => {
+export const isFunction: any = (value: any) => {
   return Object.prototype.toString.call(value).slice(8, -1) === 'Function';
 };
 

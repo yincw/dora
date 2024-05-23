@@ -21,7 +21,7 @@
  * @public
  */
 
-export const isNumber: any = (value: any = 0) => {
+export const isNumber: any = (value: any) => {
   return Object.prototype.toString.call(value).slice(8, -1) === 'Number';
 };
 
