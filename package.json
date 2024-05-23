@@ -1,10 +1,9 @@
 {
   "name": "@yincw/dora",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "A library of JavaScript utils",
   "main": "lib/index.js",
   "browser": "dist/dora.umd.min.js",
-  "unpkg": "dist/dora.umd.min.js",
   "module": "es/index.js",
   "typings": "es/index.d.ts",
   "sideEffects": false,
