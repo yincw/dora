@@ -1,9 +1,9 @@
 {
   "name": "@yincw/dora",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "A library of JavaScript utils",
   "main": "lib/index.js",
-  "browser": "dist/dora.umd.min.js",
+  "browser": "dist/dora.min.js",
   "module": "es/index.js",
   "typings": "es/index.d.ts",
   "sideEffects": false,
@@ -20,19 +20,17 @@
     "test": "jest --verbose",
     "test:coverage": "jest --coverage",
     "test:e2e": "cypress open",
-    "release": "standard-version",
+    "prepublish": "npm run build && npm run docs && git add . && npm run commit && npm run version",
     "commit": "cz",
-    "publish": "npm run clean && npm run docs:build && git add . && npm run commit && npm run release",
-    "prettier": "prettier --write --ignore-unknown",
-    "lint": "eslint 'src/**/*.{ts,js}'",
+    "version": "standard-version",
     "build": "npm run clean && npm run build:lib && npm run build:es && npm run build:amd && npm run build:dist",
     "build:dist": "cross-env NODE_ENV=production rollup -c",
     "build:amd": "tsc --outDir dist --module amd",
     "build:lib": "tsc --outDir lib --module commonjs --declaration true",
     "build:es": "tsc --outDir es --module es2015 --declaration true",
+    "docs": "npm run api && npm run api:build",
     "api": "api-extractor run",
-    "docs": "api-documenter markdown --input-folder temp --output-folder docs",
-    "docs:build": "npm run build && npm run api && npm run docs",
+    "api:build": "api-documenter markdown --input-folder temp --output-folder docs",
     "clean": "npm run clean:dist && npm run clean:docs",
     "clean:dist": "rimraf dist/* && rimraf lib/* && rimraf es/* && rimraf coverage/*",
     "clean:docs": "rimraf docs/* && rimraf temp/*",
@@ -46,9 +44,9 @@
     }
   },
   "lint-staged": {
-    "*./src/**/*.{ts,js,json,less,md}": [
-      "npm run prettier",
-      "npm run lint"
+    "*./src/**/*.{ts,js,less,css,json,md}": [
+      "prettier --write --ignore-unknown",
+      "eslint 'src/**/*.{ts,js}'"
     ]
   },
   "config": {
@@ -56,6 +54,12 @@
       "path": "cz-conventional-changelog"
     }
   },
+  "browserslist": [
+    "> 0.5%",
+    "last 2 versions",
+    "Firefox ESR",
+    "not dead"
+  ],
   "devDependencies": {
     "@babel/plugin-transform-runtime": "^7.24.3",
     "@babel/preset-env": "^7.11.5",
@@ -92,12 +96,6 @@
   "dependencies": {
     "core-js": "^3.6.5"
   },
-  "browserslist": [
-    "> 0.5%",
-    "last 2 versions",
-    "Firefox ESR",
-    "not dead"
-  ],
   "keywords": [
     "Dora",
     "Utils",
