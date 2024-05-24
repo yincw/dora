@@ -1,7 +1,7 @@
-import { isFunction } from '../../src/TypeUtil/isFunction';
+import { isFunction } from '../../src/typeUtil/isFunction';
 
 // 测试套件
-describe('TypeUtil/isFunction 函数', () => {
+describe('typeUtil/isFunction 函数', () => {
   // 测试块
   test('为 true 测试', () => {
     // 预期

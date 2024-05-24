@@ -1,82 +1,89 @@
-# dora
+# @yincw/dora
 
 <!-- ## 介绍 -->
 
-Dora：一个 JavaScript 工具库，使用 TypeScript 编写的。
+<!-- logo -->
+Dora：一个 JavaScript 通用函数工具库。包含：
+1. **数据结构处理**：typeUtil、objectUtil、arrayUtil、stringUtil、numberUtil、booleanUtil、...
+2. **内置功能扩展**：dateUtil、regexpUtil、functionUtil、...
+3. **平台功能操作**：platformUtil、directoryUtil、fileUtil、deviceUtil、storageUtil、screenUtil、encryptUtil、logUtil、...
+4. **组件功能提取**：imageUtil、graphUtil、tableUtil、calendarUtil、...
 
 <!-- ## 特色 -->
 
--
+## 使用
 
-## 使用方式
-
-ES Modules 规范用法：
+安装：
 
 ```js
-import Dora from '@yincw/dora';
-let obj = {};
-Dora.TypeUtil.isObject(obj); // true
-
-// 或
-
-import TypeUtil from '@yincw/dora/TypeUtil';
-TypeUtil.isObject(obj); // true
-
-// 或
-
-import { isObject } from '@yincw/dora/TypeUtil/isObject';
-isObject(obj); // true
+// npm install --save @yincw/dora
+npm i @yincw/dora
 ```
 
-CommonJS 规范用法：
+模块化用法：
 
 ```js
-var Dora = require('@yincw/dora');
+// ES Modules
+import { isObject } from '@yincw/dora';
 let obj = {};
-Dora.TypeUtil.isObject(obj); // true
+isObject(obj); // => true
+isObject(''); // => false
 
-// 或
-var Dora = require('@yincw/dora/TypeUtil');
-TypeUtil.isObject(obj); // true
-
-// 或
-var isObject = require('@yincw/dora/TypeUtil/isObject');
-isObject(obj); // true
+// CommonJS: Node.js 模块
+const { isObject } = require('@yincw/dora');
+var obj = {};
+isObject(obj); // => true
+isObject(''); // => false
 ```
 
-AMD 规范用法：
+AMD：Require.js 模块用法：
 
 ```html
 <!-- index.html -->
 <script src="./require.js" data-main="./main.js"></script>
 ```
-
 ```js
 // main.js
-define(['@yincw/dora/TypeUtil/index.js'], function (TypeUtil) {
-  'use strict';
 
-  let obj = {};
-  TypeUtil.isObject(obj); // true
+// 方式一：方法维度
+define(['../dist/typeUtil/isObject'], function (module) {
+  var obj = {};
+  console.log('isObject', module.isObject(obj)); // => true
+});
+
+// 方式一：方法组维度
+define(['../dist/typeUtil/index'], function (module) {
+  var typeUtil = module.default;
+  var obj = {};
+  console.log('typeUtil.isObject', typeUtil.isObject(obj)); // => true
+  console.log('typeUtil.isNull', typeUtil.isNull(null)); // => true
 });
 ```
 
-Script 全量引入：
+全量引入：
 
 ```html
 <!-- index.html -->
-<script src="/dist/dora.umd.min.js"></script>
+<script src="/dist/dora.min.js"></script>
+<!-- <script src="/dist/dora.js"></script> -->
 ```
-
 ```js
 // main.js
 let obj = {};
-dora.TypeUtil.isObject(obj); // true
+
+// 方式一：命名空间-方法组维度
+var Dora = dora.default;
+Dora.typeUtil.isObject(obj); // => true
+Dora.typeUtil.isNull(null); // => true
+
+// 方式二：方法维度
+dora.isObject(obj); // => true
 ```
+
 ## 功能分类
 
 - **数据结构处理**
-  - **TypeUtil** - 类型检测
+  - **typeUtil** - 类型检测
   - **ObjectUtil** - 对象
   - **ArrayUtil** - 数组
   - **BooleanUtil** - 布尔值
@@ -90,7 +97,7 @@ dora.TypeUtil.isObject(obj); // true
     - TimelineUtil - 时间线
     - TimerUtil - 定时器
   - RegexpUtil - 正则
-  - FunctionUtil - 函数
+  - functionUtil - 函数
     - HtmlUtil - HTML 标签
 - **平台功能**
   - PlatformUtil - 系统及平台
@@ -102,53 +109,51 @@ dora.TypeUtil.isObject(obj); // true
   - EncryptUtil - 加密&解密
   - LogUtil - 日志
 - **组件功能**
-  - GraphUtil - 图形、画布、WebGL
   - ImageUtil - 图片
+  - GraphUtil - 图形、画布、WebGL
   - TableUtil - 表格
   - CalendarUtil - 日历
 
 ## 开发
 
-通过自动化 **生成/移除** 命令会 **创建/移除** 对应的 源码样板及测试用例样板。
+通过样板命令，自动化创建对应的 源码样板及测试用例样板。
 
-- **生成**：会在 src 和 tests 下创建对应目录及文件，并且，src 目录 index.ts 文件会自动导入导出函数
-- **移除**：会移除 src 和 tests 目录对应的样板文件；且 src 目录下 index.ts 引用会自动更新
+> 创建样板
+
+会在 src 和 tests 下创建对应目录及文件，并且，src 目录 index.ts 文件会自动更新导入导出函数。
 
 ```js
 // 自动生成样板
 npm run gen type isObject
+```
+
+> 移除样板
+
+会移除 src 和 tests 目录对应的样板文件；且 src 目录下 index.ts 引用会自动更新。
+
+```js
 // 自动移除样板
 npm run del type isObject
+```
 
+其他命令：
+
+```js
 // 开发
 npm run dev
-```
 
-构建
-
-```js
 // 构建
 npm run build
-```
-
-测试
-
-```js
-// 测试覆盖率查看
-npm run test:coverage
 
 // 单元测试
 npm run test
-
+// 测试覆盖范围
+npm run test:coverage
 // 端对端测试
 npm run test:e2e
-```
 
-根据注释生成 API 文档
-
-```js
-// 构建
-npm run docs:build
+// 文档
+npm run docs
 ```
 
 ## 支持

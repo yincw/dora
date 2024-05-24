@@ -7,11 +7,11 @@
  * @example
  * 传入值为数组，返回 true。
  * ```
- * TypeUtil.isArray([]) // => true
+ * typeUtil.isArray([]) // => true
  * ```
  * 传入值为非数组，返回 false。
  * ```
- * TypeUtil.isArray('') // => false
+ * typeUtil.isArray('') // => false
  * ```
  *
  * @param value - 指定的给定值

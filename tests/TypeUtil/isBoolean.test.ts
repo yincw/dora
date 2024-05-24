@@ -1,7 +1,7 @@
-import { isBoolean } from '../../src/TypeUtil/isBoolean';
+import { isBoolean } from '../../src/typeUtil/isBoolean';
 
 // 测试套件
-describe('TypeUtil/isBoolean 函数', () => {
+describe('typeUtil/isBoolean 函数', () => {
   // 测试块
   test('为 true 测试', () => {
     // 预期

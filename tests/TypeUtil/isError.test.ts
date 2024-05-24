@@ -1,7 +1,7 @@
-import { isError } from '../../src/TypeUtil/isError';
+import { isError } from '../../src/typeUtil/isError';
 
 // 测试套件
-describe('TypeUtil/isError 函数', () => {
+describe('typeUtil/isError 函数', () => {
   // 测试块
   test('为 true 测试', () => {
     // 预期

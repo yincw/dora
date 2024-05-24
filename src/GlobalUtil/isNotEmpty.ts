@@ -8,12 +8,12 @@
  * 传入空值，返回 true：
  * ```
  * var str = '11';
- * GlobalUtil.isNotEmpty(str) // true
+ * globalUtil.isNotEmpty(str) // true
  * ```
  * 传入非空值，返回 false：
  * ```
  * var str = '';
- * GlobalUtil.isNotEmpty(str) // false
+ * globalUtil.isNotEmpty(str) // false
  * ```
  *
  * @param value - 给定值
@@ -23,7 +23,7 @@
  * @public
  */
 
-import { isObject } from '../TypeUtil/isObject';
+import { isObject } from '../typeUtil/isObject';
 
 export const isNotEmpty: any = (value: any) => {
   if (

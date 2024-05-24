@@ -4,7 +4,7 @@
 
 ## isNumber variable
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 isNumber: any

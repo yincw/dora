@@ -7,11 +7,11 @@
  * @example
  * 传入值为 Error ，返回 true。
  * ```
- * TypeUtil.isError(new Error()) // => true
+ * typeUtil.isError(new Error()) // => true
  * ```
  * 传入值为非 Error ，返回 false。
  * ```
- * TypeUtil.isError('') // => false
+ * typeUtil.isError('') // => false
  * ```
  *
  * @param value - 指定的给定值

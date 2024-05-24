@@ -7,11 +7,11 @@
  * @example
  * 传入值为 Function（函数） ，返回 true。
  * ```
- * TypeUtil.isFunction(new Function()) // => true
+ * typeUtil.isFunction(new Function()) // => true
  * ```
  * 传入值为非 Function（函数） ，返回 false。
  * ```
- * TypeUtil.isFunction('') // => false
+ * typeUtil.isFunction('') // => false
  * ```
  *
  * @param value - 指定的给定值

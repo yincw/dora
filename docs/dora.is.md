@@ -4,7 +4,7 @@
 
 ## is variable
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 is: any

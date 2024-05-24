@@ -4,7 +4,7 @@
 
 ## isUndefined variable
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 isUndefined: any

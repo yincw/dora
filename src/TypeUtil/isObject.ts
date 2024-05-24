@@ -7,11 +7,11 @@
  * @example
  * 传入值为对象，返回 true。
  * ```
- * TypeUtil.isObject({}) // => true
+ * typeUtil.isObject({}) // => true
  * ```
  * 传入值为非对象，返回 false。
  * ```
- * TypeUtil.isObject('') // => false
+ * typeUtil.isObject('') // => false
  * ```
  *
  * @param value - 指定的给定值

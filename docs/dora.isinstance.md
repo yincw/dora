@@ -4,7 +4,7 @@
 
 ## isInstance variable
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 isInstance: any

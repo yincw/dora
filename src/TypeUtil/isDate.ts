@@ -7,11 +7,11 @@
  * @example
  * 传入值为 Date ，返回 true。
  * ```
- * TypeUtil.isDate(new Date()) // => true
+ * typeUtil.isDate(new Date()) // => true
  * ```
  * 传入值为非 Date ，返回 false。
  * ```
- * TypeUtil.isDate('') // => false
+ * typeUtil.isDate('') // => false
  * ```
  *
  * @param value - 指定的给定值

@@ -7,12 +7,12 @@
  * @example
  * 传入值为布尔值，返回 true。
  * ```
- * TypeUtil.isBoolean(true) // => true
- * TypeUtil.isBoolean(false) // => true
+ * typeUtil.isBoolean(true) // => true
+ * typeUtil.isBoolean(false) // => true
  * ```
  * 传入值为非布尔值，返回 false。
  * ```
- * TypeUtil.isBoolean('') // => false
+ * typeUtil.isBoolean('') // => false
  * ```
  *
  * @param value - 指定的给定值

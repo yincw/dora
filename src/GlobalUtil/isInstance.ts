@@ -13,12 +13,12 @@
  * }
  * const person = new Person('Rose', 18);
  *
- * GlobalUtil.isInstance(person, Person) // => true
+ * globalUtil.isInstance(person, Person) // => true
  * ```
  * 传入值不是给定类的实例，返回 false。
  * ```
  * var p1 = {name: 'a', age: 18};
- * GlobalUtil.isInstance(p1, Person) // => false
+ * globalUtil.isInstance(p1, Person) // => false
  * ```
  *
  * @param value - 指定的给定值

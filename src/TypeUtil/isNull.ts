@@ -7,11 +7,11 @@
  * @example
  * 传入值为 Null ，返回 true。
  * ```
- * TypeUtil.isNull(null) // => true
+ * typeUtil.isNull(null) // => true
  * ```
  * 传入值为非 Null ，返回 false。
  * ```
- * TypeUtil.isNull('') // => false
+ * typeUtil.isNull('') // => false
  * ```
  *
  * @param value - 指定的给定值

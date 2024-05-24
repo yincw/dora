@@ -7,11 +7,11 @@
  * @example
  * 传入值为 Undefined ，返回 true。
  * ```
- * TypeUtil.isUndefined(undefined) // => true
+ * typeUtil.isUndefined(undefined) // => true
  * ```
  * 传入值为非 Undefined ，返回 false。
  * ```
- * TypeUtil.isUndefined(1) // => false
+ * typeUtil.isUndefined(1) // => false
  * ```
  *
  * @param value - 指定的给定值

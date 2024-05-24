@@ -7,7 +7,7 @@ import { terser } from 'rollup-plugin-terser';
 import { DEFAULT_EXTENSIONS } from '@babel/core';
 import pkg from './package.json';
 
-const banner = `/*!* ${pkg.name.split('/').slice(-1)}.js v${pkg.version} \n * (c) 2019-${new Date().getFullYear()} ${
+const banner = `/*!* ${pkg.name.split('/').slice(-1)}.js v${pkg.version} \n * (c) 2020-${new Date().getFullYear()} ${
   pkg.author
 } \n * Released under the MIT License. \n */`;
 
@@ -18,14 +18,14 @@ if (isProd) {
   // envPlugins = [terser()];
 } else {
   envPlugins = [
-    serve({
-      host: 'localhost', //
-      port: 3000, // 端口号
-      open: true, // 是否打开浏览器
-      contentBase: './', // 入口 html 文件位置
-      historyApiFallback: true, // 设置为 true 返回 index.html 而不是 404
-    }),
-    livereload(),
+    // serve({
+    //   host: 'localhost', // 地址
+    //   port: 3000, // 端口号
+    //   open: true, // 是否打开浏览器
+    //   contentBase: './', // 入口 html 文件位置
+    //   historyApiFallback: true, // 设置为 true 返回 index.html 而不是 404
+    // }),
+    // livereload(),
   ];
 }
 // es: 将 bundle 保留为 ES 模块文件，适用于其他打包工具，以及支持 <script type=module> 标签的浏览器。（别名：esm，module）
@@ -54,14 +54,16 @@ export default {
     //   file: pkg.main,
     // },
     {
-      format: 'umd', // umd, iife
+      format: 'umd',
       name: 'dora',
+      exports: 'named',
       banner,
-      file: pkg.browser.split('.')[0] + '.' + pkg.browser.split('.')[1] + '.js',
+      file: pkg.browser.split('.')[0] + '.js',
     },
     {
-      format: 'umd', // umd, iife
+      format: 'umd',
       name: 'dora',
+      exports: 'named',
       banner,
       file: pkg.browser,
       plugins: [
@@ -90,10 +92,6 @@ export default {
       extensions: [...DEFAULT_EXTENSIONS, '.ts'],
     }),
     // json(),
-    // nodeResolve({
-    //   modulesOnly: false,
-    //   extensions: [...DEFAULT_EXTENSIONS, '.ts'],
-    // }),
     ...envPlugins,
   ],
 };

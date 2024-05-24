@@ -7,11 +7,11 @@
  * @example
  * 传入值为 Number ，返回 true。
  * ```
- * TypeUtil.isNumber(Number) // => true
+ * typeUtil.isNumber(Number) // => true
  * ```
  * 传入值为非 Number ，返回 false。
  * ```
- * TypeUtil.isNumber('') // => false
+ * typeUtil.isNumber('') // => false
  * ```
  *
  * @param value - 指定的给定值

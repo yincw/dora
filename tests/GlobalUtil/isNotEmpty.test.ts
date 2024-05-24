@@ -1,7 +1,7 @@
-import { isNotEmpty } from '../../src/GlobalUtil/isNotEmpty';
+import { isNotEmpty } from '../../src/globalUtil/isNotEmpty';
 
 // 测试套件
-describe('GlobalUtil/isNotEmpty 函数', () => {
+describe('globalUtil/isNotEmpty 函数', () => {
   // 测试块
   test('为 false 测试', () => {
     // 预期

@@ -1,7 +1,7 @@
-import { is } from '../../src/TypeUtil/is';
+import { is } from '../../src/typeUtil/is';
 
 // 测试套件
-describe('TypeUtil/is 函数', () => {
+describe('typeUtil/is 函数', () => {
   // 测试块
   test('Boolean 类型测试', () => {
     // 预期

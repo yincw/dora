@@ -6,24 +6,177 @@
 
 ## Variables
 
-|  Variable | Description |
-|  --- | --- |
-|  [\_default](./dora._default.md) |  |
-|  [createOverload](./dora.createoverload.md) |  |
-|  [is](./dora.is.md) |  |
-|  [isArguments](./dora.isarguments.md) |  |
-|  [isArray](./dora.isarray.md) |  |
-|  [isBoolean](./dora.isboolean.md) |  |
-|  [isDate](./dora.isdate.md) |  |
-|  [isEmpty](./dora.isempty.md) |  |
-|  [isError](./dora.iserror.md) |  |
-|  [isFunction](./dora.isfunction.md) |  |
-|  [isInstance](./dora.isinstance.md) |  |
-|  [isNotEmpty](./dora.isnotempty.md) |  |
-|  [isNull](./dora.isnull.md) |  |
-|  [isNumber](./dora.isnumber.md) |  |
-|  [isObject](./dora.isobject.md) |  |
-|  [isRegExp](./dora.isregexp.md) |  |
-|  [isString](./dora.isstring.md) |  |
-|  [isUndefined](./dora.isundefined.md) |  |
+<table><thead><tr><th>
 
+Variable
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[\_default](./dora._default.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[createOverload](./dora.createoverload.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[is](./dora.is.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[isArguments](./dora.isarguments.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[isArray](./dora.isarray.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[isBoolean](./dora.isboolean.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[isDate](./dora.isdate.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[isEmpty](./dora.isempty.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[isError](./dora.iserror.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[isFunction](./dora.isfunction.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[isInstance](./dora.isinstance.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[isNotEmpty](./dora.isnotempty.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[isNull](./dora.isnull.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[isNumber](./dora.isnumber.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[isObject](./dora.isobject.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[isRegExp](./dora.isregexp.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[isString](./dora.isstring.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[isUndefined](./dora.isundefined.md)
+
+
+</td><td>
+
+
+</td></tr>
+</tbody></table>

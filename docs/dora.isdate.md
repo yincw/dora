@@ -4,7 +4,7 @@
 
 ## isDate variable
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 isDate: any

@@ -4,7 +4,7 @@
 
 ## isError variable
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 isError: any

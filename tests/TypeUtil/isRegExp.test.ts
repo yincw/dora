@@ -1,7 +1,7 @@
-import { isRegExp } from '../../src/TypeUtil/isRegExp';
+import { isRegExp } from '../../src/typeUtil/isRegExp';
 
 // 测试套件
-describe('TypeUtil/isRegExp 函数', () => {
+describe('typeUtil/isRegExp 函数', () => {
   // 测试块
   test('为 true 测试', () => {
     // 预期

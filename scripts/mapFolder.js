@@ -48,9 +48,6 @@ const map = (dirPath, mode = 'directory') => {
 // };
 
 exports.mapFolder = function () {
-  let dirItemNames = []; // 目录名称组成的数组
-  let indexTemps = []; // index.ts 模板
-
   // 递归 src
   // let pathArrs = [];
   // mapDir('src', (paths, isFile) => {
@@ -72,6 +69,9 @@ exports.mapFolder = function () {
 
   // 以 directory 模式迭代 src 子目录
   const dirArrs = map('src');
+  let dirItemNames = []; // 目录名称组成的数组
+  let indexTemps = []; // src/index.ts 模板
+  let exportIndexTemps = []; // src/index.ts 模板
   dirArrs.forEach((dirItem) => {
     dirItemNames.push(dirItem.name);
 
@@ -81,50 +81,36 @@ exports.mapFolder = function () {
 
     // 以 file 模式迭代 src 子目录 里的文件
     const fileArrs = map('src/' + dirItem.name, 'file');
-
-    // src/*Util.ts
     // src/*Util/index.ts
     let fileItemNames = []; // 目录名称组成的数组
-    let fileTemps = []; // *Util.ts 模板
-    let exportFileTemps = []; // *Util.ts 模板
-    let fileTempsOutside = []; // src/*Util.ts 模板
-    let exportFileTempsOutside = []; // src/*Util.ts 模板
+    let fileTemps = []; // src/*Util/index.ts 模板
     fileArrs.forEach((fileItem) => {
       if (fileItem.name !== 'index') {
         fileItemNames.push(fileItem.name);
 
-        // src/*Util.ts
-        // import { tree2 } from './ObjectUtil/tree2';
-        // const fileTempOutside = `import { ${fileItem.name} } from '${fileItem.path}';\n`; // 1. 以对象方式导出
+        // src/index.ts
         const exportFileTempOutside = `export { ${fileItem.name} } from '${fileItem.path}';\n`; // 以方法方式导出
-        // fileTempsOutside.push(fileTempOutside);
-        exportFileTempsOutside.push(exportFileTempOutside);
+        exportIndexTemps.push(exportFileTempOutside);
 
         // src/*Util/index.ts
-        // import { tree2 } from './tree2';
         const fileTemp = `import { ${fileItem.name} } from './${fileItem.name}';\n`; // 1. 以对象方式导出
-        const exportFileTemp = `export { ${fileItem.name} } from './${fileItem.name}';\n`; // 以方法方式导出
         fileTemps.push(fileTemp);
-        exportFileTemps.push(exportFileTemp);
       }
     });
-    // export default { tree2 }; // 提供给 src/index.ts 使用
-    exportFileTemps.push(`\nexport default {\n${fileItemNames.join(',\n')}\n};`); // 2. 以对象方式导出
-    // src/*Util/index.ts
-    fs.writeFileSync(`src/${dirItem.name}/index.ts`, fileTemps.join('') + '\n' + exportFileTemps.join('')); // 以对象 + 方法方式导出
-    console.log('\033[88;32m' + ` √ src/${dirItem.name}/index.ts 更新成功。\n` + '\033[0m');
 
-    indexTemps.push(`${exportFileTempsOutside.join('')}\n`);
-    // 在外层以对象形式导出
-    // src/*Util.ts
-    // exportFileTempsOutside.push(`\nexport default {\n${fileItemNames.join(',\n')}\n};`); // 2. 以对象方式导出
-    // fs.writeFileSync(`src/${dirItem.name}.ts`, fileTempsOutside.join('') + '\n' + exportFileTempsOutside.join('')); // 以对象 + 方法方式导出
-    // console.log('\033[88;32m' + ` √ src/${dirItem.name}.ts 更新成功。\n` + '\033[0m');
+    // src/*Util/index.ts
+    // 提供给 src/index.ts 使用
+    fileTemps.push(`\nexport default {\n${fileItemNames.join(',\n')}\n};`); // 2. 以对象方式导出
+    fs.writeFileSync(`src/${dirItem.name}/index.ts`, fileTemps.join(''));
+    console.log('\033[88;32m' + ` √ src/${dirItem.name}/index.ts 更新成功。\n` + '\033[0m');
   });
 
   // src/index.ts
+  // 模块化用法 isNull()
+  indexTemps.push(`\n${exportIndexTemps.join('')}\n`);
   if (indexTemps.length > 0) {
-    indexTemps.push(`\nexport default {\n${dirItemNames.join(',\n')}\n};`);
+    // 对象用法 Dora.typeUtil.isNull()
+    indexTemps.push(`export default {\n${dirItemNames.join(',\n')}\n};`);
   }
   fs.writeFileSync('src/index.ts', indexTemps.join(''));
   console.log('\033[88;32m' + ` √ src/index.ts 更新成功。\n` + '\033[0m');

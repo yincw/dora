@@ -4,7 +4,7 @@
 
 ## isString variable
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 isString: any

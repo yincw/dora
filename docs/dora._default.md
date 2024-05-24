@@ -4,19 +4,19 @@
 
 ## \_default variable
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 _default: {
-    FunctionUtil: {
+    functionUtil: {
         createOverload: any;
     };
-    GlobalUtil: {
+    globalUtil: {
         isEmpty: any;
         isInstance: any;
         isNotEmpty: any;
     };
-    TypeUtil: {
+    typeUtil: {
         is: any;
         isArguments: any;
         isArray: any;

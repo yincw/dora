@@ -4,7 +4,7 @@
 
 ## isFunction variable
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 isFunction: any

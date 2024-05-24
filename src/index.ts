@@ -1,29 +1,27 @@
-import FunctionUtil from './FunctionUtil/index';
-export { createOverload } from './FunctionUtil/createOverload';
+import functionUtil from './functionUtil/index';
+import globalUtil from './globalUtil/index';
+import typeUtil from './typeUtil/index';
 
-import GlobalUtil from './GlobalUtil/index';
-export { isEmpty } from './GlobalUtil/isEmpty';
-export { isInstance } from './GlobalUtil/isInstance';
-export { isNotEmpty } from './GlobalUtil/isNotEmpty';
-
-import TypeUtil from './TypeUtil/index';
-export { is } from './TypeUtil/is';
-export { isArguments } from './TypeUtil/isArguments';
-export { isArray } from './TypeUtil/isArray';
-export { isBoolean } from './TypeUtil/isBoolean';
-export { isDate } from './TypeUtil/isDate';
-export { isError } from './TypeUtil/isError';
-export { isFunction } from './TypeUtil/isFunction';
-export { isNull } from './TypeUtil/isNull';
-export { isNumber } from './TypeUtil/isNumber';
-export { isObject } from './TypeUtil/isObject';
-export { isRegExp } from './TypeUtil/isRegExp';
-export { isString } from './TypeUtil/isString';
-export { isUndefined } from './TypeUtil/isUndefined';
-
+export { createOverload } from './functionUtil/createOverload';
+export { isEmpty } from './globalUtil/isEmpty';
+export { isInstance } from './globalUtil/isInstance';
+export { isNotEmpty } from './globalUtil/isNotEmpty';
+export { is } from './typeUtil/is';
+export { isArguments } from './typeUtil/isArguments';
+export { isArray } from './typeUtil/isArray';
+export { isBoolean } from './typeUtil/isBoolean';
+export { isDate } from './typeUtil/isDate';
+export { isError } from './typeUtil/isError';
+export { isFunction } from './typeUtil/isFunction';
+export { isNull } from './typeUtil/isNull';
+export { isNumber } from './typeUtil/isNumber';
+export { isObject } from './typeUtil/isObject';
+export { isRegExp } from './typeUtil/isRegExp';
+export { isString } from './typeUtil/isString';
+export { isUndefined } from './typeUtil/isUndefined';
 
 export default {
-FunctionUtil,
-GlobalUtil,
-TypeUtil
+functionUtil,
+globalUtil,
+typeUtil
 };

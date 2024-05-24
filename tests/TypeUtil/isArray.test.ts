@@ -1,7 +1,7 @@
-import { isArray } from '../../src/TypeUtil/isArray';
+import { isArray } from '../../src/typeUtil/isArray';
 
 // 测试套件
-describe('TypeUtil/isArray 函数', () => {
+describe('typeUtil/isArray 函数', () => {
   // 测试块
   test('为 true 测试', () => {
     // 预期

@@ -12,20 +12,6 @@ import { isRegExp } from './isRegExp';
 import { isString } from './isString';
 import { isUndefined } from './isUndefined';
 
-export { is } from './is';
-export { isArguments } from './isArguments';
-export { isArray } from './isArray';
-export { isBoolean } from './isBoolean';
-export { isDate } from './isDate';
-export { isError } from './isError';
-export { isFunction } from './isFunction';
-export { isNull } from './isNull';
-export { isNumber } from './isNumber';
-export { isObject } from './isObject';
-export { isRegExp } from './isRegExp';
-export { isString } from './isString';
-export { isUndefined } from './isUndefined';
-
 export default {
 is,
 isArguments,

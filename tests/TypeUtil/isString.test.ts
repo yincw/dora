@@ -1,7 +1,7 @@
-import { isString } from '../../src/TypeUtil/isString';
+import { isString } from '../../src/typeUtil/isString';
 
 // 测试套件
-describe('TypeUtil/isString 函数', () => {
+describe('typeUtil/isString 函数', () => {
   // 测试块
   test('为 true 测试', () => {
     // 预期

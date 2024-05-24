@@ -4,7 +4,7 @@
 
 ## isBoolean variable
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 isBoolean: any

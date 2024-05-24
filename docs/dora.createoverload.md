@@ -4,7 +4,7 @@
 
 ## createOverload variable
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 createOverload: any

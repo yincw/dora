@@ -82,7 +82,7 @@ if (!dirName || !fileName) {
  * explain<placeholder>
  * code<placeholder>
  *
- * @param dataSource - DESCRIPTION
+ * @param value - DESCRIPTION
  * @param options - DESCRIPTION
  * @returns ANY
  * @defaultValue ANY
@@ -90,8 +90,8 @@ if (!dirName || !fileName) {
  * @internal -> @alpha -> @beta -> @public (single)
  */
 
-export const ${fileName}: any = (dataSource: any, options: any) => {
-  if (!dataSource) throw new Error('dataSource 参数不能为空。');
+export const ${fileName}: any = (value: any, options: any) => {
+  if (!value) throw new Error('value 参数不能为空。');
   // return ;
 };
 
@@ -105,7 +105,7 @@ describe('${dirNameUtil}/${fileName} 函数', () => {
   // 测试块
   test('数据源参数不能为空', () => {
     // 预期
-    expect(() => {${fileName}()}).toThrow();
+    // expect(() => {${fileName}()}).toThrow();
   });
 });
 `;
@@ -151,10 +151,8 @@ describe('${dirNameUtil}/${fileName} 函数', () => {
     if (!err) {
       if (modeFlag === 'del') {
         fs.unlinkSync(`./src/${dirNameUtil}/${fileName}.ts`);
-        // fs.unlinkSync(`./src/${dirNameUtil}.ts`);
         fs.unlinkSync(`./tests/${dirNameUtil}/${fileName}.test.ts`);
         console.log('\033[88;32m' + ` √ src/${dirNameUtil}/${fileName}.ts 删除成功；` + '\033[0m');
-        // console.log('\033[88;32m' + ` √ src/${dirNameUtil}.ts 删除成功；` + '\033[0m');
         console.log('\033[88;32m' + ` √ src/index.ts 删除成功；` + '\033[0m');
         console.log('\033[88;32m' + ` √ tests/${dirNameUtil}/${fileName}.test.ts 删除成功；` + '\033[0m');
         process.chdir(`./`);

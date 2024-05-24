@@ -1,7 +1,7 @@
-import { createOverload } from '../../src/FunctionUtil/createOverload';
+import { createOverload } from '../../src/functionUtil/createOverload';
 
 // 测试套件
-describe('FunctionUtil/createOverload 函数', () => {
+describe('functionUtil/createOverload 函数', () => {
   // 测试块
   test('查询所有用户', () => {
     // 预期

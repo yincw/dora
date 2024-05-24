@@ -4,7 +4,7 @@
 
 ## isArguments variable
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 isArguments: any

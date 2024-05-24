@@ -1,7 +1,7 @@
-import { isDate } from '../../src/TypeUtil/isDate';
+import { isDate } from '../../src/typeUtil/isDate';
 
 // 测试套件
-describe('TypeUtil/isDate 函数', () => {
+describe('typeUtil/isDate 函数', () => {
   // 测试块
   test('为 true 测试', () => {
     // 预期

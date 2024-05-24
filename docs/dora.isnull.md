@@ -4,7 +4,7 @@
 
 ## isNull variable
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 isNull: any

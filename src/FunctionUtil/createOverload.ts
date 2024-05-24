@@ -7,7 +7,7 @@
  * @example
  * 常见一个函数，根据传入不同数量的参数及不同的参数类型调用不同的函数实现。
  * ```
- * const getUsers = FunctionUtil.createOverload({
+ * const getUsers = functionUtil.createOverload({
  *   useFirst: true, // 为 true 时意味着，如果有多次相同的重载实现，则使用第一次的重载实现函数，否则，使用最后一次定义的重载实现函数
  * });
  * getUsers.addImpl(function () {

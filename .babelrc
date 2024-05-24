@@ -5,7 +5,7 @@
       "@babel/preset-env",
       {
         "modules": false,  // 可选值: "amd" | "umd" | "systemjs" | "commonjs|cjs" | "auto" | false；默认值: "auto"
-        "useBuiltIns": false,  // 可选值: "usage"、"entry"、false；默认值: false
+        "useBuiltIns": "usage",  // 可选值: "usage"、"entry"、false；默认值: false
         "corejs": 3,  // 可选值: 2、3、{version: 2 | 3, proposals: boolean}；默认值: 2
         "targets": {
           "ie": 10

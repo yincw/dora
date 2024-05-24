@@ -8,12 +8,12 @@
  * 传入值为对象，返回 true。
  * ```
  * function test() {
- *    TypeUtil.isArguments(arguments) // => true
+ *    typeUtil.isArguments(arguments) // => true
  * };
  * ```
  * 传入值为非 Arguments 对象，返回 false。
  * ```
- * TypeUtil.isArguments('') // => false
+ * typeUtil.isArguments('') // => false
  * ```
  *
  * @param value - 指定的给定值

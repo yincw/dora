@@ -4,7 +4,7 @@
 
 ## isObject variable
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 isObject: any

@@ -4,7 +4,7 @@
 
 ## isRegExp variable
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 isRegExp: any

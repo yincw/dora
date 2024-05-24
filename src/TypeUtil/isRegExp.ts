@@ -7,11 +7,11 @@
  * @example
  * 传入值为 RegExp ，返回 true。
  * ```
- * TypeUtil.isRegExp(new RegExp()) // => true
+ * typeUtil.isRegExp(new RegExp()) // => true
  * ```
  * 传入值为非 RegExp ，返回 false。
  * ```
- * TypeUtil.isRegExp('') // => false
+ * typeUtil.isRegExp('') // => false
  * ```
  *
  * @param value - 指定的给定值

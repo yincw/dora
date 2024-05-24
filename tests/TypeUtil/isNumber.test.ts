@@ -1,7 +1,7 @@
-import { isNumber } from '../../src/TypeUtil/isNumber';
+import { isNumber } from '../../src/typeUtil/isNumber';
 
 // 测试套件
-describe('TypeUtil/isNumber 函数', () => {
+describe('typeUtil/isNumber 函数', () => {
   // 测试块
   test('为 true 测试', () => {
     // 预期

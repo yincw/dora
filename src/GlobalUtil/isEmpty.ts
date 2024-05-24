@@ -8,12 +8,12 @@
  * 传入空值，返回 true：
  * ```
  * var str = '';
- * GlobalUtil.isEmpty(str) // true
+ * globalUtil.isEmpty(str) // true
  * ```
  * 传入非空值，返回 false：
  * ```
  * var str = '11';
- * GlobalUtil.isEmpty(str) // false
+ * globalUtil.isEmpty(str) // false
  * ```
  *
  * @param value - 给定值

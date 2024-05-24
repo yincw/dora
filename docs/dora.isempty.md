@@ -4,7 +4,7 @@
 
 ## isEmpty variable
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 isEmpty: any

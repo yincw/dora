@@ -1,7 +1,7 @@
-import { isInstance } from '../../src/GlobalUtil/isInstance';
+import { isInstance } from '../../src/globalUtil/isInstance';
 
 // 测试套件
-describe('GlobalUtil/isInstance 函数', () => {
+describe('globalUtil/isInstance 函数', () => {
   // 测试块
 
   test('为 true 测试', () => {

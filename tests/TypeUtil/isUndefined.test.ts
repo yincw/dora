@@ -1,7 +1,7 @@
-import { isUndefined } from '../../src/TypeUtil/isUndefined';
+import { isUndefined } from '../../src/typeUtil/isUndefined';
 
 // 测试套件
-describe('TypeUtil/isUndefined 函数', () => {
+describe('typeUtil/isUndefined 函数', () => {
   // 测试块
   test('为 true 测试', () => {
     // 预期
