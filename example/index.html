@@ -5,49 +5,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>@yincw/dora</title>
   <!-- AMD，CMD -->
-  <script src="./lib/require.js" data-main="./amd.js"></script>
+  <!-- <script src="./lib/require.js" data-main="./amd.js"></script> -->
 </head>
 <body>
   <!-- script，iife，UMD -->
   <!-- <script src="../dist/dora.js"></script>
   <script>
     console.log('dora',dora);
-    // const getUsers = dora.functionUtil.createOverload({
-    //   useFirst: true,
-    // });
+    const getUsers = dora.default.functionUtil.createOverload({
+      useFirst: true,
+    });
 
-    // getUsers.addImpl(function () {
-    //   console.log('查询所有用户');
-    // });
-    // getUsers.addImpl(function () {
-    //   console.log('xxxx查询所有用户');
-    // });
-    // const searchPage = function (page, pageSize = 10) {
-    //   console.log('按照【页码】和【数量】查询用户');
-    // }
-    // getUsers.addImpl('number', searchPage);
-    // getUsers.addImpl('number', 'number', searchPage);
+    getUsers.addImpl(function () {
+      console.log('查询所有用户');
+    });
+    getUsers.addImpl(function () {
+      console.log('xxxx查询所有用户');
+    });
+    const searchPage = function (page, pageSize = 10) {
+      console.log('按照【页码】和【数量】查询用户');
+    }
+    getUsers.addImpl('number', searchPage);
+    getUsers.addImpl('number', 'number', searchPage);
 
-    // getUsers.addImpl('string', function () {
-    //   console.log('按照【姓名】查询用户');
-    // });
+    getUsers.addImpl('string', function () {
+      console.log('按照【姓名】查询用户');
+    });
 
-    // getUsers.addImpl('string', 'string', function () {
-    //   console.log('按照【性别】查询用户');
-    // });
-    // getUsers();
-    // getUsers(1);
-    // getUsers(1, 10);
-    // getUsers('1');
-    // getUsers('1', '10');
+    getUsers.addImpl('string', 'string', function () {
+      console.log('按照【性别】查询用户');
+    });
+    getUsers();
+    getUsers(1);
+    getUsers(1, 10);
+    getUsers('1');
+    getUsers('1', '10');
 
 </script> -->
 
-  <script>
-    // import Dora from '@yincw/dora';
-    // import {isNull} from '../es/typeUtil/isNull.js';
+  <script type="module">
+    import {isNull} from '../es/typeUtil/isNull.js';
     // console.log('isNull', isNull([]));
-
 
     // 函数式编程
     // ============

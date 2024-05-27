@@ -4,8 +4,23 @@
 
 ## is variable
 
+检测给定值的数据类型（内置数据结构类型及内置类类型）
+
 **Signature:**
 
 ```typescript
 is: any
 ```
+
+## Remarks
+
+检测给定值的数据类型；返回数据类型名称。常见类型有： - Undefined - 内置数据结构类 - Null - Object - Array - Boolean - Number - String - 内置功能类 - Date - RegExp - Function - Arguments - Error
+
+## Example
+
+
+```js
+var obj = {};
+typeUtil.is(obj); // 'Object'
+```
+

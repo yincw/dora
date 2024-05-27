@@ -4,8 +4,30 @@
 
 ## isArguments variable
 
+检测给定值是否为 Arguments 对象类型
+
 **Signature:**
 
 ```typescript
 isArguments: any
 ```
+
+## Remarks
+
+检测给定值是否为 Arguments 对象类型；如果是，返回 true，否则返回 false。
+
+## Example
+
+传入值为对象，返回 true。
+
+```
+function test() {
+   typeUtil.isArguments(arguments) // => true
+};
+```
+传入值为非 Arguments 对象，返回 false。
+
+```
+typeUtil.isArguments('') // => false
+```
+

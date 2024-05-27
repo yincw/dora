@@ -4,17 +4,34 @@
     [
       "@babel/preset-env",
       {
-        "modules": false,  // 可选值: "amd" | "umd" | "systemjs" | "commonjs|cjs" | "auto" | false；默认值: "auto"
-        "useBuiltIns": "usage",  // 可选值: "usage"、"entry"、false；默认值: false
-        "corejs": 3,  // 可选值: 2、3、{version: 2 | 3, proposals: boolean}；默认值: 2
-        "targets": {
-          "ie": 10
-        }
+        // "useBuiltIns": "usage",
+        // "corejs": {
+        //   "version": "3.37",
+        //   "proposals": true // 是否开启编译处于提案阶段的 ES6+ API
+        // },
+        "modules": false
       }
     ]
   ],
   "plugins": [
-    // ["@babel/plugin-transform-runtime"] // 解决多个地方使用相同代码导致打包重复的问题
+    "@babel/plugin-transform-runtime",
+    [
+      "polyfill-corejs3",
+      {
+        "method": "usage-pure",
+        "version": "3.37.1",
+        "proposals": true // 是否开启编译处于提案阶段的 ES6+ API
+      }
+    ]
+    // [
+    //   "@babel/plugin-transform-runtime",
+    //   {
+    //     "corejs": {
+    //       "version": 3,
+    //       "proposals": true // 是否开启编译处于提案阶段的 ES6+ API
+    //     }
+    //   }
+    // ]
   ],
   "ignore": [
     "node_modules/**"

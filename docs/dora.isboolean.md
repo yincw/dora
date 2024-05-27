@@ -4,8 +4,29 @@
 
 ## isBoolean variable
 
+检测给定值是否为 Boolean（布尔值）类型
+
 **Signature:**
 
 ```typescript
 isBoolean: any
 ```
+
+## Remarks
+
+检测给定值是否为 Boolean（布尔值）类型；如果是，返回 true，否则返回 false。
+
+## Example
+
+传入值为布尔值，返回 true。
+
+```
+typeUtil.isBoolean(true) // => true
+typeUtil.isBoolean(false) // => true
+```
+传入值为非布尔值，返回 false。
+
+```
+typeUtil.isBoolean('') // => false
+```
+

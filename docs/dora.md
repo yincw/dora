@@ -33,6 +33,8 @@ Description
 
 </td><td>
 
+函数重载
+
 
 </td></tr>
 <tr><td>
@@ -41,6 +43,8 @@ Description
 
 
 </td><td>
+
+检测给定值的数据类型（内置数据结构类型及内置类类型）
 
 
 </td></tr>
@@ -51,6 +55,8 @@ Description
 
 </td><td>
 
+检测给定值是否为 Arguments 对象类型
+
 
 </td></tr>
 <tr><td>
@@ -59,6 +65,8 @@ Description
 
 
 </td><td>
+
+检测给定值是否为 Array（数组）类型
 
 
 </td></tr>
@@ -69,6 +77,8 @@ Description
 
 </td><td>
 
+检测给定值是否为 Boolean（布尔值）类型
+
 
 </td></tr>
 <tr><td>
@@ -77,6 +87,8 @@ Description
 
 
 </td><td>
+
+检测给定值是否为 Date 类型
 
 
 </td></tr>
@@ -87,6 +99,8 @@ Description
 
 </td><td>
 
+检测给定值是否为空
+
 
 </td></tr>
 <tr><td>
@@ -95,6 +109,8 @@ Description
 
 
 </td><td>
+
+检测给定值是否为 Error 类型
 
 
 </td></tr>
@@ -105,6 +121,8 @@ Description
 
 </td><td>
 
+检测给定值是否为 Function（函数）类型
+
 
 </td></tr>
 <tr><td>
@@ -113,6 +131,8 @@ Description
 
 
 </td><td>
+
+检测给定值是否是给定类的实例
 
 
 </td></tr>
@@ -123,6 +143,8 @@ Description
 
 </td><td>
 
+检测给定值是否不为空
+
 
 </td></tr>
 <tr><td>
@@ -131,6 +153,8 @@ Description
 
 
 </td><td>
+
+检测给定值是否为 Null 类型
 
 
 </td></tr>
@@ -141,6 +165,8 @@ Description
 
 </td><td>
 
+检测给定值是否为 Number（数值）类型
+
 
 </td></tr>
 <tr><td>
@@ -149,6 +175,8 @@ Description
 
 
 </td><td>
+
+检测给定值是否为 Object（对象）类型
 
 
 </td></tr>
@@ -159,6 +187,8 @@ Description
 
 </td><td>
 
+检测给定值是否为 RegExp（正则）类型
+
 
 </td></tr>
 <tr><td>
@@ -168,6 +198,8 @@ Description
 
 </td><td>
 
+检测给定值是否为 String（字符串值）类型
+
 
 </td></tr>
 <tr><td>
@@ -176,6 +208,8 @@ Description
 
 
 </td><td>
+
+检测给定值是否为 Undefined（未定义变量）类型
 
 
 </td></tr>

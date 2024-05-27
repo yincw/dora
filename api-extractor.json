@@ -9,9 +9,9 @@
   },
   "dtsRollup": {
     "enabled": true,
-    "untrimmedFilePath": "<projectFolder>/lib/<unscopedPackageName>.d.ts",
-    "betaTrimmedFilePath": "<projectFolder>/lib/<unscopedPackageName>-beta.d.ts",
-    "publicTrimmedFilePath": "<projectFolder>/lib/<unscopedPackageName>-public.d.ts"
+    "untrimmedFilePath": "<projectFolder>/lib/<unscopedPackageName>.d.ts"
+    // "betaTrimmedFilePath": "<projectFolder>/lib/<unscopedPackageName>-beta.d.ts",
+    // "publicTrimmedFilePath": "<projectFolder>/lib/<unscopedPackageName>-public.d.ts"
   },
   "docModel": {
     "enabled": true,

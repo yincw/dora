@@ -4,8 +4,28 @@
 
 ## isNull variable
 
+检测给定值是否为 Null 类型
+
 **Signature:**
 
 ```typescript
 isNull: any
 ```
+
+## Remarks
+
+检测给定值是否为 Null 类型；如果是，返回 true，否则返回 false。
+
+## Example
+
+传入值为 Null ，返回 true。
+
+```
+typeUtil.isNull(null) // => true
+```
+传入值为非 Null ，返回 false。
+
+```
+typeUtil.isNull('') // => false
+```
+

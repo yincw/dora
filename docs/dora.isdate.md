@@ -4,8 +4,28 @@
 
 ## isDate variable
 
+检测给定值是否为 Date 类型
+
 **Signature:**
 
 ```typescript
 isDate: any
 ```
+
+## Remarks
+
+检测给定值是否为 Date 类型；如果是，返回 true，否则返回 false。
+
+## Example
+
+传入值为 Date ，返回 true。
+
+```
+typeUtil.isDate(new Date()) // => true
+```
+传入值为非 Date ，返回 false。
+
+```
+typeUtil.isDate('') // => false
+```
+

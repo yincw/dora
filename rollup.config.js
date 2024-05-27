@@ -1,33 +1,16 @@
-// import resolve from '@rollup/plugin-node-resolve';
-// import commonjs from '@rollup/plugin-commonjs';
-// import json from '@rollup/plugin-json';
-import typescript from 'rollup-plugin-typescript2';
+import resolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
+import typescript from '@rollup/plugin-typescript';
 import babel from '@rollup/plugin-babel';
-import { terser } from 'rollup-plugin-terser';
-import { DEFAULT_EXTENSIONS } from '@babel/core';
+import json from '@rollup/plugin-json';
+import terser from '@rollup/plugin-terser';
 import pkg from './package.json';
+// import pkg from './package.json' assert { type: "json" };
 
 const banner = `/*!* ${pkg.name.split('/').slice(-1)}.js v${pkg.version} \n * (c) 2020-${new Date().getFullYear()} ${
   pkg.author
 } \n * Released under the MIT License. \n */`;
 
-const NODE_ENV = process.env.NODE_ENV; // 环境变量
-const isProd = NODE_ENV === 'production';
-let envPlugins = [];
-if (isProd) {
-  // envPlugins = [terser()];
-} else {
-  envPlugins = [
-    // serve({
-    //   host: 'localhost', // 地址
-    //   port: 3000, // 端口号
-    //   open: true, // 是否打开浏览器
-    //   contentBase: './', // 入口 html 文件位置
-    //   historyApiFallback: true, // 设置为 true 返回 index.html 而不是 404
-    // }),
-    // livereload(),
-  ];
-}
 // es: 将 bundle 保留为 ES 模块文件，适用于其他打包工具，以及支持 <script type=module> 标签的浏览器。（别名：esm，module）
 // system: SystemJS 模块加载器的原生格式（别名：systemjs）
 // ✅amd: 异步模块加载，适用于 RequireJS 等模块加载器
@@ -59,6 +42,7 @@ export default {
       exports: 'named',
       banner,
       file: pkg.browser.split('.')[0] + '.js',
+      sourcemap: true,
     },
     {
       format: 'umd',
@@ -76,22 +60,24 @@ export default {
           },
         }),
       ],
+      sourcemap: true,
     },
   ],
   external: ['core-js'],
   plugins: [
-    // resolve(),
-    // commonjs(),
+    resolve({
+      moduleDirectories: ['node_modules'],
+    }),
+    commonjs(),
     typescript({
       module: 'ES2015',
+      sourceMap: true,
     }),
     babel({
-      babelHelpers: 'bundled',
-      // babelHelpers: 'runtime',
+      // babelHelpers: 'bundled',
+      babelHelpers: 'runtime',
       exclude: 'node_modules/**',
-      extensions: [...DEFAULT_EXTENSIONS, '.ts'],
     }),
-    // json(),
-    ...envPlugins,
+    json(),
   ],
 };

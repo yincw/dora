@@ -6,10 +6,10 @@
     "outDir": "dist",
     "moduleResolution": "Node",
     "esModuleInterop": true,
-    "sourceMap": true,
+    "sourceMap": false,
     "declaration": false,
     "declarationMap": false,
-    "removeComments": true,
+    "removeComments": false,
     "strict": true
   },
   "include": [

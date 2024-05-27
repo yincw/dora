@@ -19,8 +19,10 @@
  * - Error
  *
  * @example
+ * ```js
  * var obj = {};
  * typeUtil.is(obj); // 'Object'
+ * ```
  *
  * @param value - 指定的给定值
  * @returns String

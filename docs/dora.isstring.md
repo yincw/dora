@@ -4,8 +4,28 @@
 
 ## isString variable
 
+检测给定值是否为 String（字符串值）类型
+
 **Signature:**
 
 ```typescript
 isString: any
 ```
+
+## Remarks
+
+检测给定值是否为 String（字符串值）类型；如果是，返回 true，否则返回 false。
+
+## Example
+
+传入值为 String ，返回 true。
+
+```
+typeUtil.isString('') // => true
+```
+传入值为非 String ，返回 false。
+
+```
+typeUtil.isString(1) // => false
+```
+

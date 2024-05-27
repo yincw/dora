@@ -4,8 +4,35 @@
 
 ## isInstance variable
 
+检测给定值是否是给定类的实例
+
 **Signature:**
 
 ```typescript
 isInstance: any
 ```
+
+## Remarks
+
+检测给定值是否是给定类的实例；如果是，返回 true，否则返回 false。
+
+## Example
+
+传入值是给定类的实例，返回 true。
+
+```
+function Person(name, age) {
+  this.name = name
+  this.age = age
+}
+const person = new Person('Rose', 18);
+
+globalUtil.isInstance(person, Person) // => true
+```
+传入值不是给定类的实例，返回 false。
+
+```
+var p1 = {name: 'a', age: 18};
+globalUtil.isInstance(p1, Person) // => false
+```
+

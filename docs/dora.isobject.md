@@ -4,8 +4,28 @@
 
 ## isObject variable
 
+检测给定值是否为 Object（对象）类型
+
 **Signature:**
 
 ```typescript
 isObject: any
 ```
+
+## Remarks
+
+检测给定值是否为 Object（对象）类型；如果是，返回 true，否则返回 false。
+
+## Example
+
+传入值为对象，返回 true。
+
+```
+typeUtil.isObject({}) // => true
+```
+传入值为非对象，返回 false。
+
+```
+typeUtil.isObject('') // => false
+```
+

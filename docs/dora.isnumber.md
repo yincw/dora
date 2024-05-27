@@ -4,8 +4,28 @@
 
 ## isNumber variable
 
+检测给定值是否为 Number（数值）类型
+
 **Signature:**
 
 ```typescript
 isNumber: any
 ```
+
+## Remarks
+
+检测给定值是否为 Number（数值）类型；如果是，返回 true，否则返回 false。
+
+## Example
+
+传入值为 Number ，返回 true。
+
+```
+typeUtil.isNumber(Number) // => true
+```
+传入值为非 Number ，返回 false。
+
+```
+typeUtil.isNumber('') // => false
+```
+

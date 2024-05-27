@@ -4,8 +4,30 @@
 
 ## isNotEmpty variable
 
+检测给定值是否不为空
+
 **Signature:**
 
 ```typescript
 isNotEmpty: any
 ```
+
+## Remarks
+
+检测给定值是否不为空；如果是，返回 true，否则返回 false。
+
+## Example
+
+传入空值，返回 true：
+
+```
+var str = '11';
+globalUtil.isNotEmpty(str) // true
+```
+传入非空值，返回 false：
+
+```
+var str = '';
+globalUtil.isNotEmpty(str) // false
+```
+
