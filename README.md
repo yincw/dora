@@ -1,24 +1,41 @@
-# @yincw/dora
+<div align="center"><a name="readme-top"></a>
 
-<!-- ## 介绍 -->
+<img height="140" src="./example/images/dora.svg">
 
-<!-- logo -->
-Dora：一个 JavaScript 通用函数工具库。包含：
-1. **数据结构处理**：typeUtil、objectUtil、arrayUtil、stringUtil、numberUtil、booleanUtil、...
-2. **内置功能扩展**：dateUtil、regexpUtil、functionUtil、...
-3. **平台功能操作**：platformUtil、directoryUtil、fileUtil、deviceUtil、storageUtil、screenUtil、encryptUtil、logUtil、...
-4. **组件功能提取**：imageUtil、graphUtil、tableUtil、calendarUtil、...
+<h1>@yincw/dora</h1>
 
-<!-- ## 特色 -->
+一个 JavaScript 通用函数工具库。
 
-## 使用
+<img height="320" src="./example/images/doraUtil.png">
 
-安装：
+</div>
+
+<!-- ## ✨ 特色 -->
+
+## 🖥 环境支持
+
+- Web 应用
+- 小程序（微信、抖音、支付宝、QQ ...）
+- [React Native](https://reactnative.dev/) 应用
+- [Electron](https://www.electronjs.org/) 应用
+- [Node.js](https://nodejs.org/) 应用
+
+| [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>Safari | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/electron/electron_48x48.png" alt="Electron" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>Electron |
+| --- | --- | --- | --- | --- |
+| last 2 versions | last 2 versions | last 2 versions | Edge | last 2 versions |
+
+## 📦 安装
 
 ```js
 // npm install --save @yincw/dora
 npm i @yincw/dora
+
+// pnpm
+pnpm add @yincw/dora
 ```
+
+## 🔨 使用
+
 
 模块化用法：
 
@@ -36,9 +53,11 @@ isObject(obj); // => true
 isObject(''); // => false
 ```
 
-AMD：Require.js 模块用法：
+
 
 ```html
+<!-- AMD：Require.js 模块 -->
+
 <!-- index.html -->
 <script src="./require.js" data-main="./main.js"></script>
 ```
@@ -65,7 +84,6 @@ define(['../dist/typeUtil/index'], function (module) {
 ```html
 <!-- index.html -->
 <script src="/dist/dora.min.js"></script>
-<!-- <script src="/dist/dora.js"></script> -->
 ```
 ```js
 // main.js
@@ -80,41 +98,25 @@ Dora.typeUtil.isNull(null); // => true
 dora.isObject(obj); // => true
 ```
 
-## 功能分类
+## ⌨️ 开发
 
-- **数据结构处理**
-  - **typeUtil** - 类型检测
-  - **ObjectUtil** - 对象
-  - **ArrayUtil** - 数组
-  - **BooleanUtil** - 布尔值
-  - **NumberUtil** - 数值
-  - **StringUtil** - 字符串值
-    - MoneyUtil  - 金额
-    - UrlUtil  - Url 解码，编码
-    - JsonUtil  - JSON 解析，字符串化
-- **内置功能**
-  - DateUtil - 日期时间
-    - TimelineUtil - 时间线
-    - TimerUtil - 定时器
-  - RegexpUtil - 正则
-  - functionUtil - 函数
-    - HtmlUtil - HTML 标签
-- **平台功能**
-  - PlatformUtil - 系统及平台
-    - DirectoryUtil - 目录及路径
-    - FileUtil - 文件
-  - DeviceUtil - 设备
-    - StorageUtil - 存储
-    - ScreenUtil - 屏幕
-  - EncryptUtil - 加密&解密
-  - LogUtil - 日志
-- **组件功能**
-  - ImageUtil - 图片
-  - GraphUtil - 图形、画布、WebGL
-  - TableUtil - 表格
-  - CalendarUtil - 日历
+```js
+// 开发
+npm run dev
 
-## 开发
+// 构建
+npm run build
+
+// 单元测试
+npm run test
+// 测试覆盖范围
+npm run test:coverage
+// 端对端测试
+npm run test:e2e
+
+// 文档
+npm run docs
+```
 
 通过样板命令，自动化创建对应的 源码样板及测试用例样板。
 
@@ -136,27 +138,7 @@ npm run gen type isObject
 npm run del type isObject
 ```
 
-其他命令：
-
-```js
-// 开发
-npm run dev
-
-// 构建
-npm run build
-
-// 单元测试
-npm run test
-// 测试覆盖范围
-npm run test:coverage
-// 端对端测试
-npm run test:e2e
-
-// 文档
-npm run docs
-```
-
-## 支持
+## ❤️ 支持
 
 - 微信
 - 支付宝
