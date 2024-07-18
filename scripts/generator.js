@@ -75,6 +75,8 @@ if (!dirName || !fileName) {
   const tsTemp = `/**
  * summary<placeholder>
  *
+ * @category ${dirNameUtil}
+ *
  * @remarks
  * details<placeholder>
  *

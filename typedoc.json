@@ -1,0 +1,39 @@
+{
+  "includeVersion": true,
+  "entryPoints": ["src/index.ts"],
+  "out": "docs",
+  "lang": "zh",
+  "navigation": {
+    "includeCategories": true,
+    "includeGroups": false,
+    "includeFolders": true
+  },
+  "categorizeByGroup": false,
+  "defaultCategory": "Other",
+  "categoryOrder": [
+    "globalUtil",
+    "typeUtil",
+
+    "objectUtil",
+    "arrayUtil",
+    "booleanUtil",
+    "numberUtil",
+    "stringUtil",
+
+    "dateUtil",
+    "regexpUtil",
+    "functionUtil",
+
+    "platformUtil",
+    "deviceUtil",
+    "encryptUtil",
+    "logUtil",
+
+    "imageUtil",
+    "graphUtil",
+    "tableUtil",
+    "calendarUtil",
+
+    "Other"
+  ]
+}

@@ -1,6 +1,8 @@
 /**
  * 检测给定值是否为 Arguments 对象类型
  *
+ * @category typeUtil
+ *
  * @remarks
  * 检测给定值是否为 Arguments 对象类型；如果是，返回 true，否则返回 false。
  *

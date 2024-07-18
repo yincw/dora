@@ -1,6 +1,8 @@
 /**
  * 函数重载
  *
+ * @category functionUtil
+ *
  * @remarks
  * 函数重载：常用于同一函数根据参数类型及个数调用不同的实现
  *

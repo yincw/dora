@@ -1,5 +1,14 @@
+import { isObject } from '../typeUtil/isObject';
+/**
+ * @categoryDescription globalUtil
+ * 全局工具集
+ *
+ */
+
 /**
  * 检测给定值是否不为空
+ *
+ * @category globalUtil
  *
  * @remarks
  * 检测给定值是否不为空；如果是，返回 true，否则返回 false。
@@ -22,8 +31,6 @@
  *
  * @public
  */
-
-import { isObject } from '../typeUtil/isObject';
 
 export const isNotEmpty: any = (value: any) => {
   if (

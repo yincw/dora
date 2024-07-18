@@ -1,5 +1,14 @@
+import { isNotEmpty } from './isNotEmpty';
+/**
+ * @categoryDescription globalUtil
+ * 全局工具集
+ * @showCategories
+ */
+
 /**
  * 检测给定值是否为空
+ *
+ * @category globalUtil
  *
  * @remarks
  * 检测给定值是否为空；如果是，返回 true，否则返回 false。
@@ -22,8 +31,6 @@
  *
  * @public
  */
-
-import { isNotEmpty } from './isNotEmpty';
 
 export const isEmpty: any = (value: any) => {
   if (!isNotEmpty(value)) {

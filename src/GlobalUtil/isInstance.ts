@@ -1,5 +1,13 @@
 /**
+ * @categoryDescription globalUtil
+ * 全局工具集
+ *
+ */
+
+/**
  * 检测给定值是否是给定类的实例
+ *
+ * @category globalUtil
  *
  * @remarks
  * 检测给定值是否是给定类的实例；如果是，返回 true，否则返回 false。
