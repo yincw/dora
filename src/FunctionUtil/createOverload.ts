@@ -47,7 +47,7 @@
  * @public
  */
 
-export const createOverload: any = function (options: any) {
+export let createOverload: any = function (options: any) {
   // 创建一个 Map，用于存储重载函数的签名（参数类型及数量）和实现，一一对应
   // [{ key: '', value: () => {} }]
   const callMap = new Map();

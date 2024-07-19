@@ -23,7 +23,7 @@
  * @public
  */
 
-export const isDate: any = (value: any) => {
+export let isDate: any = (value: any) => {
   return Object.prototype.toString.call(value).slice(8, -1) === 'Date';
 };
 

@@ -23,7 +23,7 @@
  * @public
  */
 
-export const isRegExp: any = (value: any) => {
+export let isRegExp: any = (value: any) => {
   return Object.prototype.toString.call(value).slice(8, -1) === 'RegExp';
 };
 

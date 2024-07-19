@@ -23,7 +23,7 @@
  * @public
  */
 
-export const isArray: any = (value: any) => {
+export let isArray: any = (value: any) => {
   return Object.prototype.toString.call(value).slice(8, -1) === 'Array';
 };
 

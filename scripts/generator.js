@@ -92,7 +92,7 @@ if (!dirName || !fileName) {
  * @internal -> @alpha -> @beta -> @public (single)
  */
 
-export const ${fileName}: any = (value: any, options: any) => {
+export let ${fileName}: any = (value: any, options: any) => {
   if (!value) throw new Error('value 参数不能为空。');
   // return ;
 };

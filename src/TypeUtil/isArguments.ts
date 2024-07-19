@@ -25,6 +25,6 @@
  * @public
  */
 
-export const isArguments: any = (value: any) => {
+export let isArguments: any = (value: any) => {
   return Object.prototype.toString.call(value).slice(8, -1) === 'Arguments';
 };

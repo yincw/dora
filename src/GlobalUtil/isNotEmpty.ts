@@ -32,7 +32,7 @@ import { isObject } from '../typeUtil/isObject';
  * @public
  */
 
-export const isNotEmpty: any = (value: any) => {
+export let isNotEmpty: any = (value: any) => {
   if (
     // 非 undefined & null
     (typeof value !== 'undefined' && value !== null) ||

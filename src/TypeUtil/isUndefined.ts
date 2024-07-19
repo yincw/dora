@@ -23,7 +23,7 @@
  * @public
  */
 
-export const isUndefined: any = (value: any) => {
+export let isUndefined: any = (value: any) => {
   return Object.prototype.toString.call(value).slice(8, -1) === 'Undefined';
 };
 

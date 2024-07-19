@@ -32,7 +32,7 @@ import { isNotEmpty } from './isNotEmpty';
  * @public
  */
 
-export const isEmpty: any = (value: any) => {
+export let isEmpty: any = (value: any) => {
   if (!isNotEmpty(value)) {
     return true;
   }

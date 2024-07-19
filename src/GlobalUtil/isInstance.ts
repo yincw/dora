@@ -36,7 +36,7 @@
  * @public
  */
 
-export const isInstance: any = (value: any, Classes: any) => {
+export let isInstance: any = (value: any, Classes: any) => {
   // 用 instanceof 准确判断实例关系
   return value instanceof Classes;
 };

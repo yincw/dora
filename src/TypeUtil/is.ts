@@ -33,6 +33,6 @@
  * @public
  */
 
-export const is: any = (value: any) => {
+export let is: <T>(value: T) => string = function <T>(value: T): string {
   return Object.prototype.toString.call(value).slice(8, -1);
 };

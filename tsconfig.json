@@ -1,4 +1,5 @@
 {
+  "$schema": "http://json.schemastore.org/tsconfig",
   "compilerOptions": {
     "target": "ES5",
     "module": "ES2015",
@@ -6,9 +7,9 @@
     "outDir": "dist",
     "moduleResolution": "Node",
     "esModuleInterop": true,
-    "sourceMap": false,
     "declaration": false,
     "declarationMap": false,
+    "sourceMap": false,
     "removeComments": false,
     "strict": true
   },
