@@ -1,16 +1,18 @@
 /**
- * @categoryDescription globalUtil
- * 全局工具集
+ * @public
  *
- */
-
-/**
  * 检测给定值是否是给定类的实例
  *
  * @category globalUtil
  *
  * @remarks
  * 检测给定值是否是给定类的实例；如果是，返回 true，否则返回 false。
+ *
+ * @param value - 指定的给定值
+ *
+ * @returns Boolean
+ *
+ * @defaultValue Boolean
  *
  * @example
  * 传入值是给定类的实例，返回 true。
@@ -28,12 +30,6 @@
  * var p1 = {name: 'a', age: 18};
  * globalUtil.isInstance(p1, Person) // => false
  * ```
- *
- * @param value - 指定的给定值
- * @returns Boolean
- * @defaultValue Boolean
- *
- * @public
  */
 
 export let isInstance: any = (value: any, Classes: any) => {

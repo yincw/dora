@@ -1,17 +1,17 @@
 import { isObject } from '../typeUtil/isObject';
-/**
- * @categoryDescription globalUtil
- * 全局工具集
- *
- */
 
 /**
+ * @public
+ *
  * 检测给定值是否不为空
  *
  * @category globalUtil
  *
  * @remarks
  * 检测给定值是否不为空；如果是，返回 true，否则返回 false。
+ *
+ * @param value - 给定值
+ * @returns Boolean
  *
  * @example
  * 传入空值，返回 true：
@@ -24,12 +24,6 @@ import { isObject } from '../typeUtil/isObject';
  * var str = '';
  * globalUtil.isNotEmpty(str) // false
  * ```
- *
- * @param value - 给定值
- * @returns Boolean
- * @defaultValue false
- *
- * @public
  */
 
 export let isNotEmpty: any = (value: any) => {

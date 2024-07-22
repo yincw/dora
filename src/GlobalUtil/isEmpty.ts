@@ -1,17 +1,18 @@
 import { isNotEmpty } from './isNotEmpty';
-/**
- * @categoryDescription globalUtil
- * 全局工具集
- * @showCategories
- */
 
 /**
+ * @public
+ *
  * 检测给定值是否为空
  *
  * @category globalUtil
  *
  * @remarks
  * 检测给定值是否为空；如果是，返回 true，否则返回 false。
+ *
+ * @param {any} value - 给定值
+ * @returns 如果参数 value 不为空，返回 true，否则，返回 false。
+ * @defaultValue false
  *
  * @example
  * 传入空值，返回 true：
@@ -24,12 +25,6 @@ import { isNotEmpty } from './isNotEmpty';
  * var str = '11';
  * globalUtil.isEmpty(str) // false
  * ```
- *
- * @param value - 给定值
- * @returns Boolean
- * @defaultValue false
- *
- * @public
  */
 
 export let isEmpty: any = (value: any) => {

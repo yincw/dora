@@ -73,6 +73,8 @@ if (!dirName || !fileName) {
 
   // 方法文件
   const tsTemp = `/**
+ * @alpha -> @beta -> @public
+ *
  * summary<placeholder>
  *
  * @category ${dirNameUtil}
@@ -80,16 +82,16 @@ if (!dirName || !fileName) {
  * @remarks
  * details<placeholder>
  *
+ * @param value - DESCRIPTION<placeholder>
+ * @param options - DESCRIPTION<placeholder>
+ *
+ * @returns ANY
+ *
+ * @defaultValue ANY
+ *
  * @example
  * explain<placeholder>
  * code<placeholder>
- *
- * @param value - DESCRIPTION
- * @param options - DESCRIPTION
- * @returns ANY
- * @defaultValue ANY
- *
- * @internal -> @alpha -> @beta -> @public (single)
  */
 
 export let ${fileName}: any = (value: any, options: any) => {

@@ -1,10 +1,17 @@
+// import { Options } from './Options';
+
 /**
+ * @public
+ *
  * 函数重载
  *
  * @category functionUtil
  *
  * @remarks
  * 函数重载：常用于同一函数根据参数类型及个数调用不同的实现
+ *
+ * @param {Options} options - 选项，useFirst：true 为 true 时意味着，如果有多次相同的重载实现，则使用第一次的重载实现函数
+ * @returns function
  *
  * @example
  * 常见一个函数，根据传入不同数量的参数及不同的参数类型调用不同的函数实现。
@@ -39,15 +46,9 @@
  * getUsers('a'); // 按照【姓名】查询用户
  * getUsers('a', 'b'); // 按照【性别】查询用户
  * ```
- *
- * @param options - 选项，useFirst：true 为 true 时意味着，如果有多次相同的重载实现，则使用第一次的重载实现函数
- * @returns function
- * @defaultValue ANY
- *
- * @public
  */
 
-export let createOverload: any = function (options: any) {
+export let createOverload = function (options: any): any {
   // 创建一个 Map，用于存储重载函数的签名（参数类型及数量）和实现，一一对应
   // [{ key: '', value: () => {} }]
   const callMap = new Map();
