@@ -5,12 +5,12 @@
 ```ts
 
 // @public
-export let createOverload: any;
+export let createOverload: (options?: OverloadOptionsInterface) => any;
 
 // @public (undocumented)
 const _default: {
     functionUtil: {
-        createOverload: any;
+        createOverload: (options?: OverloadOptionsInterface | undefined) => any;
     };
     globalUtil: {
         isEmpty: any;
@@ -18,70 +18,75 @@ const _default: {
         isNotEmpty: any;
     };
     typeUtil: {
-        is: any;
-        isArguments: any;
-        isArray: any;
-        isBoolean: any;
-        isDate: any;
-        isError: any;
-        isFunction: any;
-        isNull: any;
-        isNumber: any;
-        isObject: any;
-        isRegExp: any;
-        isString: any;
-        isUndefined: any;
+        is: <T>(value: T) => string;
+        isArguments: <T_1>(value: T_1) => boolean;
+        isArray: <T_2>(value: T_2) => boolean;
+        isBoolean: <T_3>(value: T_3) => boolean;
+        isDate: <T_4>(value: T_4) => boolean;
+        isError: <T_5>(value: T_5) => boolean;
+        isFunction: <T_6>(value: T_6) => boolean;
+        isNull: <T_7>(value: T_7) => boolean;
+        isNumber: <T_8>(value: T_8) => boolean;
+        isObject: <T_9>(value: T_9) => boolean;
+        isRegExp: <T_10>(value: T_10) => boolean;
+        isString: <T_11>(value: T_11) => boolean;
+        isUndefined: <T_12>(value: T_12) => boolean;
     };
 };
 export default _default;
 
 // @public
-export const is: any;
+export let is: <T>(value: T) => string;
 
 // @public
-export const isArguments: any;
+export let isArguments: <T>(value: T) => boolean;
 
 // @public
-export const isArray: any;
+export let isArray: <T>(value: T) => boolean;
 
 // @public
-export const isBoolean: any;
+export let isBoolean: <T>(value: T) => boolean;
 
 // @public
-export const isDate: any;
+export let isDate: <T>(value: T) => boolean;
 
 // @public
-export const isEmpty: any;
+export let isEmpty: any;
 
 // @public
-export const isError: any;
+export let isError: <T>(value: T) => boolean;
 
 // @public
-export const isFunction: any;
+export let isFunction: <T>(value: T) => boolean;
 
 // @public
-export const isInstance: any;
+export let isInstance: any;
 
 // @public
-export const isNotEmpty: any;
+export let isNotEmpty: any;
 
 // @public
-export const isNull: any;
+export let isNull: <T>(value: T) => boolean;
 
 // @public
-export const isNumber: any;
+export let isNumber: <T>(value: T) => boolean;
 
 // @public
-export const isObject: any;
+export let isObject: <T>(value: T) => boolean;
 
 // @public
-export const isRegExp: any;
+export let isRegExp: <T>(value: T) => boolean;
 
 // @public
-export const isString: any;
+export let isString: <T>(value: T) => boolean;
 
 // @public
-export const isUndefined: any;
+export let isUndefined: <T>(value: T) => boolean;
+
+// @public
+export interface OverloadOptionsInterface {
+    useFirst: boolean;
+}
 
 // (No @packageDocumentation comment for this package)
 

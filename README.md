@@ -6,7 +6,9 @@
 
 一个 JavaScript 通用函数工具库。
 
-<img height="320" src="./example/images/doraUtil.png">
+<img height="350" src="./example/images/doraUtil.png">
+
+[API 参考手册](https://yincw.github.io/dora/)
 
 </div>
 
@@ -120,7 +122,7 @@ npm run docs
 
 通过样板命令，自动化创建对应的 源码样板及测试用例样板。
 
-> 创建样板
+#### 创建样板
 
 会在 src 和 tests 下创建对应目录及文件，并且，src 目录 index.ts 文件会自动更新导入导出函数。
 
@@ -129,7 +131,7 @@ npm run docs
 npm run gen type isObject
 ```
 
-> 移除样板
+#### 移除样板
 
 会移除 src 和 tests 目录对应的样板文件；且 src 目录下 index.ts 引用会自动更新。
 
@@ -140,8 +142,11 @@ npm run del type isObject
 
 ## ❤️ 支持
 
-- 微信
-- 支付宝
+如果当前工具有帮助到您，请作者喝杯咖啡吧 (●'◡'●)
+
+微信 |  | 支付宝
+---|---|---
+ ![微信](./example/images/sponsor_wx.jpg) |  | ![支付宝](./example/images/sponsor_zfb.jpg)
 
 ## LICENSE
 

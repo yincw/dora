@@ -6,6 +6,7 @@ const { capitalized } = require('./capitalized');
 const mode = process.argv[2];
 const dirName = process.argv[3];
 const fileName = process.argv[4];
+const typeName = process.argv[5]; // Interfaces
 
 const dirNameUtil = capitalized(dirName) + 'Util';
 
@@ -98,7 +99,23 @@ export let ${fileName}: any = (value: any, options: any) => {
   if (!value) throw new Error('value 参数不能为空。');
   // return ;
 };
+`;
 
+  const tsTempInterface = `/**
+* @alpha -> @beta -> @public
+*
+* summary<placeholder>
+*
+* @category ${dirNameUtil}
+*
+* @remarks
+* details<placeholder>
+*
+* @property value - DESCRIPTION<placeholder>
+*/
+
+export interface ${fileName + 'Interface'} {
+};
 `;
 
   // 测试文件
@@ -110,6 +127,20 @@ describe('${dirNameUtil}/${fileName} 函数', () => {
   test('数据源参数不能为空', () => {
     // 预期
     // expect(() => {${fileName}()}).toThrow();
+  });
+});
+`;
+  // 测试文件
+  const testTempInterface = `import { ${fileName + 'Interface'} } from '../../src/${dirNameUtil}/${
+    fileName + 'Interface'
+  }';
+
+// 测试套件
+describe('${dirNameUtil}/${fileName + 'Interface'} 函数', () => {
+  // 测试块
+  test('数据源参数不能为空', () => {
+    // 预期
+    // expect(() => {${fileName + 'Interface'}()}).toThrow();
   });
 });
 `;
@@ -131,12 +162,23 @@ describe('${dirNameUtil}/${fileName} 函数', () => {
     }
 
     process.chdir(`./src/${dirNameUtil}`); // cd $1
-    fs.writeFileSync(`${fileName}.ts`, tsTemp);
-    console.log('\033[88;32m' + ` √ src/${dirNameUtil}/${fileName}.ts 函数样板创建成功；` + '\033[0m');
+    if (typeName) {
+      const newFileName = fileName + 'Interface';
 
-    process.chdir(`../../tests/${dirNameUtil}`);
-    fs.writeFileSync(`${fileName}.test.ts`, testTemp);
-    console.log('\033[88;32m' + ` √ tests/${dirNameUtil}/${fileName}.test.ts 测试用例样板创建成功；` + '\033[0m');
+      fs.writeFileSync(`${newFileName}.ts`, tsTempInterface);
+      console.log('\033[88;32m' + ` √ src/${dirNameUtil}/${newFileName}.ts 接口样板创建成功；` + '\033[0m');
+
+      process.chdir(`../../tests/${dirNameUtil}`);
+      fs.writeFileSync(`${newFileName}.test.ts`, testTempInterface);
+      console.log('\033[88;32m' + ` √ tests/${dirNameUtil}/${newFileName}.test.ts 测试用例样板创建成功；` + '\033[0m');
+    } else {
+      fs.writeFileSync(`${fileName}.ts`, tsTemp);
+      console.log('\033[88;32m' + ` √ src/${dirNameUtil}/${fileName}.ts 函数样板创建成功；` + '\033[0m');
+
+      process.chdir(`../../tests/${dirNameUtil}`);
+      fs.writeFileSync(`${fileName}.test.ts`, testTemp);
+      console.log('\033[88;32m' + ` √ tests/${dirNameUtil}/${fileName}.test.ts 测试用例样板创建成功；` + '\033[0m');
+    }
   };
 
   let includeDir = dirArr.some((item) => {

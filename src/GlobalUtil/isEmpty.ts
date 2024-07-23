@@ -10,7 +10,7 @@ import { isNotEmpty } from './isNotEmpty';
  * @remarks
  * 检测给定值是否为空；如果是，返回 true，否则返回 false。
  *
- * @param {any} value - 给定值
+ * @param value - 给定值
  * @returns 如果参数 value 不为空，返回 true，否则，返回 false。
  * @defaultValue false
  *

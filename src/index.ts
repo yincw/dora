@@ -3,6 +3,7 @@ import globalUtil from './globalUtil/index';
 import typeUtil from './typeUtil/index';
 
 export { createOverload } from './functionUtil/createOverload';
+export { OverloadOptionsInterface } from './functionUtil/OverloadOptionsInterface';
 export { isEmpty } from './globalUtil/isEmpty';
 export { isInstance } from './globalUtil/isInstance';
 export { isNotEmpty } from './globalUtil/isNotEmpty';
@@ -21,7 +22,7 @@ export { isString } from './typeUtil/isString';
 export { isUndefined } from './typeUtil/isUndefined';
 
 export default {
-functionUtil,
-globalUtil,
-typeUtil
+  functionUtil,
+  globalUtil,
+  typeUtil,
 };

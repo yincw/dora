@@ -86,15 +86,18 @@ exports.mapFolder = function () {
     let fileTemps = []; // src/*Util/index.ts 模板
     fileArrs.forEach((fileItem) => {
       if (fileItem.name !== 'index') {
-        fileItemNames.push(fileItem.name);
+        // 如果定义的是接口，不包含进去
+        if (!fileItem.name.includes('Interface')) {
+          fileItemNames.push(fileItem.name);
+
+          // src/*Util/index.ts
+          const fileTemp = `import { ${fileItem.name} } from './${fileItem.name}';\n`; // 1. 以对象方式导出
+          fileTemps.push(fileTemp);
+        }
 
         // src/index.ts
         const exportFileTempOutside = `export { ${fileItem.name} } from '${fileItem.path}';\n`; // 以方法方式导出
         exportIndexTemps.push(exportFileTempOutside);
-
-        // src/*Util/index.ts
-        const fileTemp = `import { ${fileItem.name} } from './${fileItem.name}';\n`; // 1. 以对象方式导出
-        fileTemps.push(fileTemp);
       }
     });
 
